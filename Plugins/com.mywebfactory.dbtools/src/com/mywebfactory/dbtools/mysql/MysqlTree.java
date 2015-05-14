@@ -1,0 +1,98 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mywebfactory.dbtools.mysql;
+
+import java.util.ArrayList;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import com.mywebfactory.objects.connectionObj;
+import com.mywebfactory.dbtools.oracle.OracleListObjects;
+
+/**
+ *
+ * @author Polo
+ */
+public class MysqlTree {
+
+    public static DefaultTreeModel MysqlTreeModel(connectionObj conObj) {
+
+        DefaultMutableTreeNode root = new DefaultMutableTreeNode("Objets");
+        DefaultMutableTreeNode tablesTreeNode = new DefaultMutableTreeNode("Tables");
+        DefaultMutableTreeNode vuesTreeNode = new DefaultMutableTreeNode("Vues");
+        DefaultMutableTreeNode indexTreeNode = new DefaultMutableTreeNode("Index");
+        //DefaultMutableTreeNode packagesTreeNode = new DefaultMutableTreeNode("Packages");
+        //DefaultMutableTreeNode proceduresTreeNode = new DefaultMutableTreeNode("Procédures");
+        //DefaultMutableTreeNode fonctionsTreeNode = new DefaultMutableTreeNode("Fonctions");
+        DefaultMutableTreeNode triggersTreeNode = new DefaultMutableTreeNode("Triggers");
+        //DefaultMutableTreeNode sequencesTreeNode = new DefaultMutableTreeNode("Séquences");
+
+        ArrayList<String> listeOfTables = MysqlListObjects.listeMysqlTables(conObj);
+        ArrayList<String> listeOfViews = MysqlListObjects.listeMysqlVues(conObj);
+        ArrayList<String> listeOfIndexes = MysqlListObjects.listeMysqlIndexes(conObj);
+        ArrayList<String> listeOfTriggers = MysqlListObjects.listeMysqlTriggers(conObj);
+        /*
+        
+        
+        ArrayList<String> listeOfProcedures = OracleListObjects.listeOracleProcedures(conObj);
+        ArrayList<String> listeOfFonctions = OracleListObjects.listeOracleFonctions(conObj);
+        ArrayList<String> listeOfPackages = OracleListObjects.listeOraclePackages(conObj);
+        ArrayList<String> listeOfSequences = OracleListObjects.listeOracleSequences(conObj);*/
+
+        for (String tmp : listeOfTables) {
+            DefaultMutableTreeNode child = new DefaultMutableTreeNode(tmp);
+            tablesTreeNode.add(child);
+        }
+        
+        for (String tmp : listeOfViews) {
+            DefaultMutableTreeNode child = new DefaultMutableTreeNode(tmp);
+            vuesTreeNode.add(child);
+        }
+        
+        for (String tmp : listeOfIndexes) {
+            DefaultMutableTreeNode child = new DefaultMutableTreeNode(tmp);
+            indexTreeNode.add(child);
+        }
+        
+        for (String tmp : listeOfTriggers) {
+            DefaultMutableTreeNode child = new DefaultMutableTreeNode(tmp);
+            triggersTreeNode.add(child);
+        }
+        
+        /*
+
+        for (String tmp : listeOfProcedures) {
+            DefaultMutableTreeNode child = new DefaultMutableTreeNode(tmp);
+            proceduresTreeNode.add(child);
+        }
+
+        for (String tmp : listeOfFonctions) {
+            DefaultMutableTreeNode child = new DefaultMutableTreeNode(tmp);
+            fonctionsTreeNode.add(child);
+        }
+
+        for (String tmp : listeOfPackages) {
+            DefaultMutableTreeNode child = new DefaultMutableTreeNode(tmp);
+            packagesTreeNode.add(child);
+        }
+
+        for (String tmp : listeOfSequences) {
+            DefaultMutableTreeNode child = new DefaultMutableTreeNode(tmp);
+            sequencesTreeNode.add(child);
+        }*/
+
+        root.add(tablesTreeNode);
+        root.add(vuesTreeNode);
+        root.add(indexTreeNode);
+        //root.add(packagesTreeNode);
+        //root.add(proceduresTreeNode);
+        //root.add(fonctionsTreeNode);
+        root.add(triggersTreeNode);
+        //root.add(sequencesTreeNode);
+
+        DefaultTreeModel rootModel = new DefaultTreeModel(root);
+
+        return rootModel;
+    }
+}

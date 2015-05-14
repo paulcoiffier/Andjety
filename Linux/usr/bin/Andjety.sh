@@ -1,0 +1,1 @@
+java -jar /usr/lib/Andjety/Andjety.jar

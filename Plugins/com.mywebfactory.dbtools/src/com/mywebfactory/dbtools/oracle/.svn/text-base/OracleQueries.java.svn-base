@@ -1,0 +1,115 @@
+package com.mywebfactory.dbtools.oracle;
+
+import java.sql.*;
+import javax.swing.JOptionPane;
+import objects.connectionObj;
+
+/**
+ *
+ * @author Polo
+ */
+public class OracleQueries {
+
+    public static ResultSet getTableData(String tableName, connectionObj conObj) {
+
+        String serverName = "", portNumber = "";
+        ResultSet rs;
+
+        try {
+            String driverName = "oracle.jdbc.driver.OracleDriver";
+            Class.forName(driverName);
+
+            serverName = conObj.getDbServeur();
+            portNumber = "1521";
+            String url = "jdbc:oracle:thin:@" + serverName + ":" + portNumber + ":" + conObj.getDbDatabase();
+
+            Connection connection = DriverManager.getConnection(url, conObj.getDbUser(), conObj.getDbPassword());
+            String query = "select * from " + tableName + "";
+
+            Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            rs = stmt.executeQuery(query);
+
+            return rs;
+
+        } catch (ClassNotFoundException e) {
+            System.out.println("Impossible de localiser le driver JDBC Oracle");
+            JOptionPane.showMessageDialog(null, "Impossible de localiser le driver JDBC Oracle", "Erreur", JOptionPane.ERROR_MESSAGE);
+            return null;
+        } catch (SQLException e) {
+            System.out.println("Erreur SQL : " + e.getMessage() + " : détails : " + serverName + " port " + portNumber);
+            JOptionPane.showMessageDialog(null, "Erreur SQL : " + e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+    }
+
+    public static ResultSet getTableColumns(String tableName, connectionObj conObj) {
+
+        String serverName = "", portNumber = "";
+        ResultSet rs;
+
+        try {
+
+            String driverName = "oracle.jdbc.driver.OracleDriver";
+            Class.forName(driverName);
+
+            serverName = conObj.getDbServeur();
+            portNumber = "1521";
+            String url = "jdbc:oracle:thin:@" + serverName + ":" + portNumber + ":" + conObj.getDbDatabase();
+
+            Connection connection = DriverManager.getConnection(url, conObj.getDbUser(), conObj.getDbPassword());
+            String query = "select COLUMN_NAME,DATA_TYPE,NULLABLE,DATA_DEFAULT,COLUMN_ID from all_tab_columns where OWNER='" + conObj.getDbUser().toUpperCase() + "' and TABLE_NAME='" + tableName + "'";
+
+            Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            rs = stmt.executeQuery(query);
+
+            return rs;
+
+        } catch (ClassNotFoundException e) {
+            System.out.println("Impossible de localiser le driver JDBC Oracle");
+            JOptionPane.showMessageDialog(null, "Impossible de localiser le driver JDBC Oracle", "Erreur", JOptionPane.ERROR_MESSAGE);
+            return null;
+        } catch (SQLException e) {
+            System.out.println("Erreur SQL : " + e.getMessage() + " : détails : " + serverName + " port " + portNumber);
+            JOptionPane.showMessageDialog(null, "Erreur SQL : " + e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+    }
+
+    public static String getTableScript(String tableName, connectionObj conObj) {
+
+        String serverName = "", portNumber = "";
+        ResultSet rs;
+
+        try {
+            String driverName = "oracle.jdbc.driver.OracleDriver";
+            Class.forName(driverName);
+
+            serverName = conObj.getDbServeur();
+            portNumber = "1521";
+            String url = "jdbc:oracle:thin:@" + serverName + ":" + portNumber + ":" + conObj.getDbDatabase();
+
+            Connection connection = DriverManager.getConnection(url, conObj.getDbUser(), conObj.getDbPassword());
+            String query = "select dbms_metadata.get_ddl('TABLE','" + tableName + "','" + conObj.getDbUser().toUpperCase() + "') from dual";
+
+            Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            rs = stmt.executeQuery(query);
+            String resultat = null;
+            while (rs.next()) {
+                resultat = rs.getString(1);
+            }
+            return resultat;
+            // Connexion DB OK
+        } catch (ClassNotFoundException e) {
+            System.out.println("Impossible de localiser le driver JDBC Oracle");
+            JOptionPane.showMessageDialog(null, "Impossible de localiser le driver JDBC Oracle", "Erreur", JOptionPane.ERROR_MESSAGE);
+            return null;
+        } catch (SQLException e) {
+            System.out.println("Erreur SQL : " + e.getMessage() + " : détails : " + serverName + " port " + portNumber);
+            JOptionPane.showMessageDialog(null, "Erreur SQL : " + e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+    }
+}

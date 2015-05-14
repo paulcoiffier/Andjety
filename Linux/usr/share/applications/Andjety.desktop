@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Andjety
+Comment=SQL Query Database
+Exec=Andjety.sh
+Icon=/usr/share/doc/Andjety/icon.ico
+Terminal=false
+Type=Application
+Categories=GNOME;Application;Utility
+StartupNotify=true

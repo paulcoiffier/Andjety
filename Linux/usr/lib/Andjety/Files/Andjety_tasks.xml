@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_09" class="java.beans.XMLDecoder">
+ <object class="objects.TaskObjListe">
+  <void property="dbObjListe">
+   <object class="java.util.ArrayList"/>
+  </void>
+ </object>
+</java>

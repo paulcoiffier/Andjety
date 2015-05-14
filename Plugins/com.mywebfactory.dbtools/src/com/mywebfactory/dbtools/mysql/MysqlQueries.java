@@ -1,0 +1,99 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mywebfactory.dbtools.mysql;
+
+import java.sql.*;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import com.mywebfactory.objects.connectionObj;
+
+/**
+ *
+ * @author Polo
+ */
+public class MysqlQueries {
+
+    public static ResultSet getTableData(String tableName, connectionObj conObj) {
+        try {
+
+            String driverName = "com.mysql.jdbc.Driver";
+            Class.forName(driverName);
+
+            Connection conn = DriverManager.getConnection("jdbc:mysql://" + conObj.getDbServeur() + "/"
+                    + conObj.getDbDatabase() + "?" + "user=" + conObj.getDbUser() + "&password=" + conObj.getDbPassword());
+
+            String query = "select * from " + tableName;
+            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = stmt.executeQuery(query);
+
+            return rs;
+        } catch (ClassNotFoundException e) {
+            System.out.println("Impossible de localiser le driver JDBC Mysql");
+            JOptionPane.showMessageDialog(null, "Impossible de localiser le driver JDBC Mysql", "Erreur", JOptionPane.ERROR_MESSAGE);
+            return null;
+        } catch (SQLException e) {
+            System.out.println("Erreur SQL : " + e.getMessage() + " : détails : " + e.getMessage().toString());
+            JOptionPane.showMessageDialog(null, "Erreur SQL : " + e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+    }
+
+    public static ResultSet getTableColumns(String tableName, connectionObj conObj) {
+        try {
+
+            String driverName = "com.mysql.jdbc.Driver";
+            Class.forName(driverName);
+
+            Connection conn = DriverManager.getConnection("jdbc:mysql://" + conObj.getDbServeur() + "/"
+                    + conObj.getDbDatabase() + "?" + "user=" + conObj.getDbUser() + "&password=" + conObj.getDbPassword());
+
+            String query = "select COLUMN_NAME,COLUMN_TYPE,IS_NULLABLE,COLUMN_DEFAULT,DATA_TYPE,COLUMN_KEY from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='" + tableName + "'";
+            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = stmt.executeQuery(query);
+            return rs;
+            // Connexion DB OK
+        } catch (ClassNotFoundException e) {
+            System.out.println("Impossible de localiser le driver JDBC Mysql");
+            JOptionPane.showMessageDialog(null, "Impossible de localiser le driver JDBC Mysql", "Erreur", JOptionPane.ERROR_MESSAGE);
+            return null;
+        } catch (SQLException e) {
+            System.out.println("Erreur SQL : " + e.getMessage() + " : détails : " + e.getMessage().toString());
+            JOptionPane.showMessageDialog(null, "Erreur SQL : " + e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+    }
+
+    public static String getTableScript(String tableName, connectionObj conObj) {
+        try {
+
+            String driverName = "com.mysql.jdbc.Driver";
+            Class.forName(driverName);
+
+            Connection conn = DriverManager.getConnection("jdbc:mysql://" + conObj.getDbServeur() + "/"
+                    + conObj.getDbDatabase() + "?" + "user=" + conObj.getDbUser() + "&password=" + conObj.getDbPassword());
+
+            String query = "SHOW CREATE TABLE " + tableName;
+            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = stmt.executeQuery(query);
+            String resultat = null;
+            while (rs.next()) {
+                resultat = rs.getString(2);
+            }
+            return resultat;
+            // Connexion DB OK
+        } catch (ClassNotFoundException e) {
+            System.out.println("Impossible de localiser le driver JDBC Mysql");
+            JOptionPane.showMessageDialog(null, "Impossible de localiser le driver JDBC Mysql", "Erreur", JOptionPane.ERROR_MESSAGE);
+            return null;
+        } catch (SQLException e) {
+            System.out.println("Erreur SQL : " + e.getMessage() + " : détails : " + e.getMessage().toString());
+            JOptionPane.showMessageDialog(null, "Erreur SQL : " + e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+    }
+}

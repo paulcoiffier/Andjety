@@ -1,0 +1,516 @@
+/*
+ * Andjety 2.0 - Code by Paul Coiffier - 2012/2013
+ * 
+ */
+package fenetres;
+
+import Utils.OptionsParser;
+import andjety.MainFen;
+import java.awt.Cursor;
+import java.awt.event.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.SwingUtilities;
+import models.DatabasesTableModel;
+import objects.DatabaseListeObj;
+import objects.DatabaseObj;
+
+/**
+ *
+ * @author Paul Coiffier
+ */
+public class DatabasesPanel extends javax.swing.JPanel implements KeyListener {
+
+    /**
+     * Creates new form DatabasesPanel
+     */
+    private MainFen mainFenInstance;
+    private DatabaseListeObj dbListe;
+    private Properties properties = new Properties();
+
+    public DatabasesPanel(MainFen m, DatabaseListeObj dbListe) {
+        mainFenInstance = m;
+        this.dbListe = dbListe;
+        initComponents();
+        //System.out.println("Nombre de serveurs : " + dbListe.getDbListe().size());
+        LoadData();
+        
+        
+        // Définition de la langue
+        OptionsParser optionsParse = new OptionsParser();
+        optionsParse.parseXml();
+        String languageValue = optionsParse.languageValue;
+        InputStream stream = null;
+
+        if (languageValue.toUpperCase().equals("ENGLISH")) {
+            stream = Thread.currentThread().getContextClassLoader().getResourceAsStream("languages/english.properties");
+        } else if (languageValue.toUpperCase().contains("FRAN")) {
+            stream = Thread.currentThread().getContextClassLoader().getResourceAsStream("languages/french.properties");
+        } else {
+            stream = Thread.currentThread().getContextClassLoader().getResourceAsStream("languages/english.properties");
+        }
+
+        try {
+            properties.load(stream);
+        } catch (IOException e) {
+            System.out.println(properties.getProperty("errorOpenFile"));
+        }
+        
+        jLabel1.setText(properties.getProperty("databasesTitle"));
+        
+        jButtonAddDatabase.setToolTipText(properties.getProperty("DatabasesPanelToolTip1"));
+        jButtonEditer.setToolTipText(properties.getProperty("DatabasesPanelToolTip2"));
+        jButtonSupprimer.setToolTipText(properties.getProperty("DatabasesPanelToolTip3"));
+        jButtonImportDatabases.setToolTipText(properties.getProperty("DatabasesPanelToolTip4"));
+        
+        // Ajout du listener sur la jtable pour les évènements clavier
+        jXTable1.addKeyListener(this);
+
+        jXTable1.addMouseListener(new MouseAdapter() {
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                if (e.isPopupTrigger()) {
+                    JTable source = (JTable) e.getSource();
+
+                    int row = source.rowAtPoint(e.getPoint());
+                    int column = source.columnAtPoint(e.getPoint());
+
+                    if (row >= 0) {
+                        if (!source.isRowSelected(row)) {
+                            source.changeSelection(row, column, false, false);
+                        }
+                        jPopupMenu1.show(e.getComponent(), e.getX(), e.getY());
+                    }
+                }
+            }
+        });
+
+    }
+
+    public final void LoadData() {
+
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                SwingUtilities.invokeLater(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                        try {
+                            jXTable1.setModel(new DatabasesTableModel(dbListe));
+
+                        } catch (Exception ex) {
+                            Logger.getLogger(DatabasesPanel.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+                        setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+                        mainFenInstance.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+                        jXTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+                        ListSelectionModel tableSelectionModel = jXTable1.getSelectionModel();
+                        tableSelectionModel.setSelectionInterval(0, 0);
+                        setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+                    }
+                ;
+            }
+        );
+    }
+
+    }).start();
+
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jMenuItemAddDatabase = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        jMenuItemEdit = new javax.swing.JMenuItem();
+        jMenuItemDelete = new javax.swing.JMenuItem();
+        jSeparator4 = new javax.swing.JPopupMenu.Separator();
+        jMenuItemImporter = new javax.swing.JMenuItem();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jXTable1 = new org.jdesktop.swingx.JXTable();
+        jToolBar1 = new javax.swing.JToolBar();
+        jButtonAddDatabase = new javax.swing.JButton();
+        jButtonEditer = new javax.swing.JButton();
+        jButtonSupprimer = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JToolBar.Separator();
+        jButtonImportDatabases = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+
+        jMenuItemAddDatabase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/database_add.png"))); // NOI18N
+        jMenuItemAddDatabase.setText("Ajouter une base de données");
+        jMenuItemAddDatabase.setToolTipText("Ajouter une base de données");
+        jMenuItemAddDatabase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAddDatabaseActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(jMenuItemAddDatabase);
+        jPopupMenu1.add(jSeparator3);
+
+        jMenuItemEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/database_edit.png"))); // NOI18N
+        jMenuItemEdit.setText("Editer la base de données");
+        jMenuItemEdit.setToolTipText("Editer la base de données");
+        jMenuItemEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemEditActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(jMenuItemEdit);
+
+        jMenuItemDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/database_delete.png"))); // NOI18N
+        jMenuItemDelete.setText("Supprimer la base de données");
+        jMenuItemDelete.setToolTipText("Supprimer la base de données");
+        jMenuItemDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemDeleteActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(jMenuItemDelete);
+        jPopupMenu1.add(jSeparator4);
+
+        jMenuItemImporter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/database_refresh.png"))); // NOI18N
+        jMenuItemImporter.setText("Importer une liste de bases de données");
+        jMenuItemImporter.setToolTipText("Importer une liste de bases de données");
+        jMenuItemImporter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemImporterActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(jMenuItemImporter);
+
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
+
+        jXTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(jXTable1);
+
+        jToolBar1.setFloatable(false);
+        jToolBar1.setRollover(true);
+
+        jButtonAddDatabase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/database_add.png"))); // NOI18N
+        jButtonAddDatabase.setToolTipText("Ajouter une base de données");
+        jButtonAddDatabase.setFocusable(false);
+        jButtonAddDatabase.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonAddDatabase.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonAddDatabase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddDatabaseActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jButtonAddDatabase);
+
+        jButtonEditer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/database_edit.png"))); // NOI18N
+        jButtonEditer.setToolTipText("Editer la base de données");
+        jButtonEditer.setFocusable(false);
+        jButtonEditer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonEditer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonEditer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditerActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jButtonEditer);
+
+        jButtonSupprimer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/database_delete.png"))); // NOI18N
+        jButtonSupprimer.setToolTipText("Supprimer la base de données");
+        jButtonSupprimer.setFocusable(false);
+        jButtonSupprimer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonSupprimer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonSupprimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSupprimerActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jButtonSupprimer);
+        jToolBar1.add(jSeparator2);
+
+        jButtonImportDatabases.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/database_refresh.png"))); // NOI18N
+        jButtonImportDatabases.setToolTipText("Importer une liste de bases de données");
+        jButtonImportDatabases.setFocusable(false);
+        jButtonImportDatabases.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonImportDatabases.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonImportDatabases.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonImportDatabasesActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jButtonImportDatabases);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gnome_network_server.png"))); // NOI18N
+        jLabel1.setText("Bases de données");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                .addGap(223, 223, 223))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonAddDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddDatabaseActionPerformed
+        addDatabaseAction();
+    }//GEN-LAST:event_jButtonAddDatabaseActionPerformed
+
+    private void addDatabaseAction() {
+        DatabasesEditor assitantFen = new DatabasesEditor(mainFenInstance, true, properties.getProperty("DatabasesPanelToolTip1"), mainFenInstance, null);
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+
+        assitantFen.typeFen = "Ajout";
+
+        assitantFen.setLocation(
+                (screenSize.width - assitantFen.getWidth()) / 2,
+                (screenSize.height - assitantFen.getHeight()) / 2);
+
+        assitantFen.setTitle(properties.getProperty("DatabasesPanelToolTip1"));
+        assitantFen.show();
+
+        assitantFen.addWindowListener(new WindowAdapter() {
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+
+                jXTable1.setModel(new DatabasesTableModel(dbListe));
+            }
+        });
+    }
+
+    private void editerAction() {
+        DatabaseObj dboToPass = null;
+        // Recherche de l'objet selectionné
+        String selectedValue = jXTable1.getValueAt(jXTable1.getSelectedRow(), 0).toString();
+
+        for (DatabaseObj dbo : dbListe.getDbListe()) {
+            if (dbo.getDblist_libelle().equals(selectedValue)) {
+                dboToPass = dbo;
+            }
+        }
+
+        DatabasesEditor assitantFen = new DatabasesEditor(mainFenInstance, true, properties.getProperty("DatabasesPanelToolTip2"), mainFenInstance, dboToPass);
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+
+        assitantFen.setFieldsValues();
+        assitantFen.typeFen = "Editer";
+
+        assitantFen.setLocation(
+                (screenSize.width - assitantFen.getWidth()) / 2,
+                (screenSize.height - assitantFen.getHeight()) / 2);
+
+        assitantFen.setTitle(properties.getProperty("DatabasesPanelToolTip2"));
+        assitantFen.show();
+
+        assitantFen.addWindowListener(new WindowAdapter() {
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+                // Refresh de la liste des bases de données dans MainFen
+                dbListe = mainFenInstance.getDBList();
+                jXTable1.setModel(new DatabasesTableModel(dbListe));
+                
+            }
+        });
+    }
+
+    private void jButtonEditerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditerActionPerformed
+        editerAction();
+    }//GEN-LAST:event_jButtonEditerActionPerformed
+
+    private void jButtonSupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprimerActionPerformed
+        supprimerAction();
+    }//GEN-LAST:event_jButtonSupprimerActionPerformed
+
+    private void supprimerAction() {
+        try {
+
+            int selectedRow = jXTable1.getSelectedRow();
+
+            DatabaseObj dboToPass = null;
+            // Recherche de l'objet selectionné
+            String selectedValue = jXTable1.getValueAt(selectedRow, 0).toString();
+
+            for (DatabaseObj dbo : dbListe.getDbListe()) {
+                if (dbo.getDblist_libelle().equals(selectedValue)) {
+                    dboToPass = dbo;
+                }
+            }
+
+            //Custom button text
+            Object[] options = {properties.getProperty("yesButton"),
+                properties.getProperty("noButton")};
+            int response = JOptionPane.showOptionDialog(null, properties.getProperty("DatabasesPanelToolTip5"),
+                    properties.getProperty("exitTitle"),
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null, options, options[0]);
+
+            if (response == 0) {
+                mainFenInstance.deleteServersToArray(dboToPass);
+                jXTable1.setModel(new DatabasesTableModel(dbListe));
+
+                ListSelectionModel selectionModel =
+                        jXTable1.getSelectionModel();
+                selectionModel.setSelectionInterval(selectedRow - 1, selectedRow - 1);
+
+
+            }
+
+        } catch (Exception e) {
+            //System.out.println("Aucune ligne selectionnéé");
+        }
+    }
+
+    static void persist(Object object) {
+        EntityManagerFactory emf = javax.persistence.Persistence.createEntityManagerFactory("AndjetyPU");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        try {
+            em.persist(object);
+            em.getTransaction().commit();
+            // System.out.println("Commit");
+        } catch (Exception e) {
+            e.printStackTrace();
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
+    }
+
+    private void importerAction() {
+        DatabaseImportDialog assitantFen = new DatabaseImportDialog(mainFenInstance, true, mainFenInstance, mainFenInstance.getTaskObjListe());
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+
+        assitantFen.setLocation(
+                (screenSize.width - assitantFen.getWidth()) / 2,
+                (screenSize.height - assitantFen.getHeight()) / 2);
+
+        assitantFen.setTitle(properties.getProperty("DatabasesPanelToolTip4"));
+        assitantFen.show();
+
+        assitantFen.addWindowListener(new WindowAdapter() {
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+                /*
+                 * em = null; EntityManagerFactory emf =
+                 * javax.persistence.Persistence.createEntityManagerFactory("AndjetyPU");
+                 * em = emf.createEntityManager(); jXTable1.setModel(new DatabasesTableModel(em));
+                 */
+            }
+        });
+    }
+
+    private void jButtonImportDatabasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImportDatabasesActionPerformed
+        importerAction();
+    }//GEN-LAST:event_jButtonImportDatabasesActionPerformed
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // System.out.println("Key EVENT : " + evt.toString());
+    }//GEN-LAST:event_formKeyPressed
+
+    private void jMenuItemEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEditActionPerformed
+        editerAction();
+    }//GEN-LAST:event_jMenuItemEditActionPerformed
+
+    private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
+        supprimerAction();
+    }//GEN-LAST:event_jMenuItemDeleteActionPerformed
+
+    private void jMenuItemAddDatabaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAddDatabaseActionPerformed
+        addDatabaseAction();
+    }//GEN-LAST:event_jMenuItemAddDatabaseActionPerformed
+
+    private void jMenuItemImporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemImporterActionPerformed
+        importerAction();
+    }//GEN-LAST:event_jMenuItemImporterActionPerformed
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAddDatabase;
+    private javax.swing.JButton jButtonEditer;
+    private javax.swing.JButton jButtonImportDatabases;
+    private javax.swing.JButton jButtonSupprimer;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jMenuItemAddDatabase;
+    private javax.swing.JMenuItem jMenuItemDelete;
+    private javax.swing.JMenuItem jMenuItemEdit;
+    private javax.swing.JMenuItem jMenuItemImporter;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JPopupMenu.Separator jSeparator4;
+    private javax.swing.JToolBar jToolBar1;
+    private org.jdesktop.swingx.JXTable jXTable1;
+    // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void keyPressed(KeyEvent ke) {
+        //System.out.println("keyPressed : Key EVENT : " + ke.toString());
+        // Si pression sur la touche "supprimer"
+        if (ke.getKeyCode() == 127) {
+            supprimerAction();
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent ke) {
+        //System.out.println("Key EVENT : " + ke.toString());
+    }
+
+    @Override
+    public void keyTyped(KeyEvent ke) {
+        //System.out.println("keyTyped : Key EVENT : " + ke.toString());
+    }
+}
