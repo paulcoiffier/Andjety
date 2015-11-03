@@ -368,7 +368,7 @@ public class Assistant1 extends javax.swing.JDialog {
     private void jButtonSQLEditorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSQLEditorActionPerformed
 
         taskSql = jEditorPane1.getText();
-        SQLEditor assitantFen = new SQLEditor(null, true, taskSql);
+        SQLEditor assitantFen = new SQLEditor(mf, true, taskSql);
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
 
         assitantFen.setLocation(

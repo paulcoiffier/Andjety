@@ -406,9 +406,8 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                 new ButtonTabComponent(theJTabbedPan));
     }
 
-    public void QuitterQuestion() {
+    public void ExitQuestion() {
 
-        //Custom button text
         Object[] options = {properties.getProperty("yesButton"),
             properties.getProperty("noButton")};
         int response = JOptionPane.showOptionDialog(this, properties.getProperty("exitQuestion"),
@@ -854,7 +853,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuQuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuQuitterActionPerformed
-        QuitterQuestion();
+        ExitQuestion();
     }//GEN-LAST:event_jMenuQuitterActionPerformed
 
     private void jMenuItemOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemOptionsActionPerformed
@@ -879,7 +878,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButtonToolbarQuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonToolbarQuitterActionPerformed
-        QuitterQuestion();
+        ExitQuestion();
     }//GEN-LAST:event_jButtonToolbarQuitterActionPerformed
 
     private void jButtonBarAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBarAboutActionPerformed
@@ -1554,7 +1553,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     if (e.getSource() == systrayQuitterItem) {
-                        QuitterQuestion();
+                        ExitQuestion();
                     }
                 }
             };
