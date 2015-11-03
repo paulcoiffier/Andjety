@@ -476,6 +476,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         jMenuQuitter = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jSeparator11 = new javax.swing.JPopupMenu.Separator();
         jMenuItemOptions = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
@@ -788,6 +789,14 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
             }
         });
         jMenu2.add(jMenuItem1);
+
+        jMenuItem2.setText("Supprimer les bases de données");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
         jMenu2.add(jSeparator11);
 
         jMenuItemOptions.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/gnome_preferences_other_small.png"))); // NOI18N
@@ -1378,6 +1387,20 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Object[] options = {"Oui",
+            "Non"};
+        int response = JOptionPane.showOptionDialog(this, "Etes-vous sur de vouloir purger la liste des serveurs ? Cela aura pour effet de supprimer l'ensemble des bases de données de la liste.",
+                "Question",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null, options, options[1]);
+
+        if (response == 0) {
+            purgeDatabaseArray();
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1443,6 +1466,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     private javax.swing.JMenuItem jMenuAssistant;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;

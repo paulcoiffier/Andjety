@@ -138,7 +138,6 @@ public class OptionsDialog extends javax.swing.JDialog {
         jComboBox1 = new javax.swing.JComboBox();
         jCheckBoxMAJAstuce = new javax.swing.JCheckBox();
         jCheckBoxMAJ = new javax.swing.JCheckBox();
-        jButton6 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox();
         jButton2 = new javax.swing.JButton();
@@ -173,13 +172,6 @@ public class OptionsDialog extends javax.swing.JDialog {
             }
         });
 
-        jButton6.setText("Clear database list");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
         jLabel6.setText("Language : ");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "English", "Français" }));
@@ -201,7 +193,6 @@ public class OptionsDialog extends javax.swing.JDialog {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jCheckBoxMAJ)
                     .addComponent(jCheckBoxMAJAstuce)
-                    .addComponent(jButton6)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -230,9 +221,7 @@ public class OptionsDialog extends javax.swing.JDialog {
                 .addComponent(jCheckBoxMAJAstuce)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jCheckBoxMAJ)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton6)
-                .addContainerGap())
+                .addGap(54, 54, 54))
         );
 
         jTabbedPane1.addTab("Général", jPanel3);
@@ -440,22 +429,6 @@ public class OptionsDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBoxMAJActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-
-        Object[] options = {"Oui",
-            "Non"};
-        int response = JOptionPane.showOptionDialog(null, "Etes-vous sur de vouloir purger la liste des serveurs ? Cela aura pour effet de supprimer l'ensemble des bases de données de la liste.",
-                "Quitter",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE,
-                null, options, options[1]);
-
-        if (response == 0) {
-            mf.purgeDatabaseArray();
-        }
-
-    }//GEN-LAST:event_jButton6ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -511,7 +484,6 @@ public class OptionsDialog extends javax.swing.JDialog {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JCheckBox jCheckBoxMAJ;
     private javax.swing.JCheckBox jCheckBoxMAJAstuce;
     private javax.swing.JComboBox jComboBox1;
