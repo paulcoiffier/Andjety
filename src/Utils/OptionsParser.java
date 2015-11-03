@@ -37,9 +37,9 @@ public class OptionsParser {
             
             String path = System.getProperty("user.dir").toString();
             
-            if(OSValidator.isUnix()){
+            /*if(OSValidator.isUnix()){
                 path = "/usr/lib/Andjety";
-            }
+            }*/
             
             File file = new File(path + "/Files/options.xml");
 

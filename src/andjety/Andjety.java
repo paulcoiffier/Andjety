@@ -7,6 +7,7 @@ package andjety;
 import Utils.OptionsParser;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -25,27 +26,20 @@ public class Andjety {
 
                 OptionsParser optionsParse = new OptionsParser();
                 optionsParse.parseXml();
-                String skinName = optionsParse.skinName;
                 JFrame.setDefaultLookAndFeelDecorated(true);
-                
+
                 try {
-                    /*SubstanceLookAndFeel.setSkin("org.jvnet.substance.skin." + skinName);
-                     UIManager.setLookAndFeel("org.jvnet.substance.SubstanceLookAndFeel");*/
                     UIManager.setLookAndFeel("org.pushingpixels.substance.api.skin.Substance" + optionsParse.skinName);
 
-                } catch (Exception e) {
+                } catch (ClassNotFoundException e) {
+                    System.out.println("Impossible de définir le Look : " + e.getMessage().toString());
+                } catch (InstantiationException e) {
+                    System.out.println("Impossible de définir le Look : " + e.getMessage().toString());
+                } catch (IllegalAccessException e) {
+                    System.out.println("Impossible de définir le Look : " + e.getMessage().toString());
+                } catch (UnsupportedLookAndFeelException e) {
                     System.out.println("Impossible de définir le Look : " + e.getMessage().toString());
                 }
-
-                /*SplashScreen mySplash = SplashScreen.getSplashScreen();
-                 if (mySplash != null) {
-                 try {
-                 Thread.currentThread().sleep(5000L);
-                 } catch (Exception e) {
-                 }
-                 mySplash.close();
-                 }*/
-
 
                 MainFen theFen = new MainFen();
                 theFen.show();

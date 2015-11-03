@@ -65,56 +65,25 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
          */
         initComponents();
 
+        JDialog.setDefaultLookAndFeelDecorated(true);
+
         // Initialisation message StatusBar
         setStatusMessage("");
+        this.setSystemTrayMenu();
 
         jButtonHelpButton.setVisible(false);
-
         jProgressBarUpdateObjet.setVisible(false);
-        JDialog.setDefaultLookAndFeelDecorated(true);
         jProgressBarUpdate.setVisible(false);
-
-        //System Tray Implémentation
-        trayIcon = null;
-        if (SystemTray.isSupported()) {
-            SystemTray tray = SystemTray.getSystemTray();
-            Image image = Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("ressources/AndjetyTray.png"));
-            ActionListener listener = new ActionListener() {
-
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    if (e.getSource() == systrayQuitterItem) {
-                        QuitterQuestion();
-                    }
-                }
-            };
-
-            PopupMenu popup = new PopupMenu();
-
-            systrayQuitterItem = new MenuItem("Quitter");
-            systrayQuitterItem.addActionListener(listener);
-            popup.add(systrayQuitterItem);
-
-            trayIcon = new TrayIcon(image, "Andjety", popup);
-            trayIcon.addActionListener(listener);
-
-            try {
-                tray.add(trayIcon);
-            } catch (AWTException e) {
-                System.err.println(e);
-            }
-        } // Fin System Tray Implémentation
-
-
-        //jButtonTachesPlanif.setVisible(false);
-        jButtonGestTachesPlanif.setVisible(false);
+        jButtonGestTachesPlanif
+                .setVisible(false);
         jMenuItem5.setVisible(false);
         jSeparator1.setVisible(false);
-        //jButtonBarEditeurSQL.setVisible(false);
         jMenuItemEditeurSQL.setVisible(false);
         jSeparator10.setVisible(false);
         //jButtonEditeurSQL.setVisible(false);
         //jButtonEditeurSQL.setEnabled(false);
+        //jButtonBarEditeurSQL.setVisible(false);
+        //jButtonTachesPlanif.setVisible(false);
 
         jProgressBarUpdateObjet = jProgressBarUpdate;
 
@@ -125,77 +94,28 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                 LoadTasksDataList();
             }
         });
-
-        // Définition de la langue
-        OptionsParser optionsParse = new OptionsParser();
-        optionsParse.parseXml();
-
-        String languageValue = optionsParse.languageValue;
-        InputStream stream = null;
-
-        if (languageValue.toUpperCase().equals("ENGLISH")) {
-            stream = Thread.currentThread().getContextClassLoader().getResourceAsStream("languages/english.properties");
-            jMenu1.setText("File");
-            jMenuAssistant.setText("New Task");
-            jMenuItemEditeurSQL.setText("SQL Editor");
-            jMenuItem5.setText("Schedule Tasks");
-            jMenuQuitter.setText("Exit");
-            jMenu2.setText("Edit");
-            jMenuItemOptions.setText("Settings");
-            jMenu3.setText("Help");
-            jMenuItem3.setText("About Andjety");
-            jMenuItem6.setText("Check Updates");
-            jXTaskPane1.setTitle("Tasks");
-            jButtonExecTask.setText("Run task");
-            jButton3.setText("New Task");
-            jButtonGestDatabases.setText("Databases");
-            jButtonEditeurSQL.setText("SQL Editor");
-            jButtonGestTachesPlanif.setText("Schedule Tasks");
-            jButtonGestTaches.setText("Tasks");
-            jButtonAccueilToolbar.setToolTipText("Welcome");
-            jButton5.setToolTipText("New Task");
-            //jButtonBarEditeurSQL.setToolTipText("SQL Editor");
-            jButtonBarGestionTaches.setToolTipText("Tasks");
-            jButtonBarGestBases.setToolTipText("Databases");
-            jButtonBarOptions.setToolTipText("Settings");
-            jButtonBarAbout.setToolTipText("About Andjety");
-            jButtonToolbarQuitter.setToolTipText("Quit Andjety");
-            jButtonHelpButton.setToolTipText("Help");
-
-        } else if (languageValue.toUpperCase().contains("FRA")) {
-            stream = Thread.currentThread().getContextClassLoader().getResourceAsStream("languages/french.properties");
-        } else {
-            stream = Thread.currentThread().getContextClassLoader().getResourceAsStream("languages/english.properties");
-        }
-
-        //System.out.println("Current Language : " + languageValue);
-
-        try {
-            properties.load(stream);
-            //System.out.println("Valeur : " + properties.getProperty("s1"));
-        } catch (IOException e) {
-            System.out.println(properties.getProperty("errorOpenFile"));
-        }
-
-        repaint();
+        setLanguage();
 
         String pathOfProject = System.getProperty("user.dir");
         try {
             // Désérialisation des objets XML
-            if (OSValidator.isUnix()) {
-                dbListObj = (DatabaseListeObj) XMLTools.decodeFromFile("/usr/lib/Andjety/Files/Andjety_servers.xml");
-                taskListObj = (TaskObjListe) XMLTools.decodeFromFile("/usr/lib/Andjety/Files/Andjety_tasks.xml");
-                taskExecListObj = (TaskExecListe) XMLTools.decodeFromFile("/usr/lib/Andjety/Files/Andjety_tasksexec.xml");
-                listOfLogs = (LogObjArrayObj) XMLTools.decodeFromFile("/usr/lib/Andjety/Files/Andjety_tasks_logs.xml");
-            } else {
-                dbListObj = (DatabaseListeObj) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_servers.xml");
-                taskListObj = (TaskObjListe) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_tasks.xml");
-                taskExecListObj = (TaskExecListe) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_tasksexec.xml");
-                listOfLogs = (LogObjArrayObj) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_tasks_logs.xml");
-            }
+            /*if (OSValidator.isUnix()) {
+             dbListObj = (DatabaseListeObj) XMLTools.decodeFromFile("/usr/lib/Andjety/Files/Andjety_servers.xml");
+             taskListObj = (TaskObjListe) XMLTools.decodeFromFile("/usr/lib/Andjety/Files/Andjety_tasks.xml");
+             taskExecListObj = (TaskExecListe) XMLTools.decodeFromFile("/usr/lib/Andjety/Files/Andjety_tasksexec.xml");
+             listOfLogs = (LogObjArrayObj) XMLTools.decodeFromFile("/usr/lib/Andjety/Files/Andjety_tasks_logs.xml");
+             } else {
+             dbListObj = (DatabaseListeObj) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_servers.xml");
+             taskListObj = (TaskObjListe) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_tasks.xml");
+             taskExecListObj = (TaskExecListe) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_tasksexec.xml");
+             listOfLogs = (LogObjArrayObj) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_tasks_logs.xml");
+             }*/
+            dbListObj = (DatabaseListeObj) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_servers.xml");
+            taskListObj = (TaskObjListe) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_tasks.xml");
+            taskExecListObj = (TaskExecListe) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_tasksexec.xml");
+            listOfLogs = (LogObjArrayObj) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_tasks_logs.xml");
 
             // Ajoute le chargement de scheduleTasksListObj
-
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -225,7 +145,6 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
          * Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null,
          * ex); }
          */
-
         LoadTasksDataList();
 
         // Démarrage du scheduler
@@ -239,21 +158,18 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
          * } catch (SchedulerException se) { System.out.println("Erreur
          * Scheduler : " + se.getMessage().toString()); }
          */
-
         // Application du controle de mise à jour au démarrage si dans les options
         OptionsParser optParse = new OptionsParser();
         optParse.parseXml();
 
-
         if (optParse.majOnStartup.equals("oui")) {
             //System.out.println("FIND MAJ");
             FIndMajEngine fmw = new FIndMajEngine();
-            fmw.appVersion = appVersion;
+            fmw.appVersion = Constants.appVersion;
             fmw.mf = this;
             Thread thk = new Thread(fmw);
             thk.start();
         }
-
 
         // Astuces au démarrage
      /*
@@ -1229,7 +1145,6 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
             return false;
         }
 
-
     }
 
     public void saveServersAndTestToXML(DatabaseObj dbObj) {
@@ -1265,7 +1180,6 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                 XMLTools.encodeToFile(taskExecListObj, pathOfProject + "/Files/Andjety_tasksexec.xml");
             }
 
-
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -1282,7 +1196,6 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
             } else {
                 XMLTools.encodeToFile(taskListObj, pathOfProject + "/Files/Andjety_tasks.xml");
             }
-
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null, ex);
@@ -1301,7 +1214,6 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                 XMLTools.encodeToFile(dbListObj, pathOfProject + "/Files/Andjety_servers.xml");
             }
 
-
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -1318,7 +1230,6 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
             } else {
                 XMLTools.encodeToFile(listOfLogs, pathOfProject + "/Files/Andjety_tasks_logs.xml");
             }
-
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null, ex);
@@ -1347,8 +1258,6 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
 
     private void jButtonHelpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHelpButtonActionPerformed
 
-
-
         OptionsParser optionsParse = new OptionsParser();
         optionsParse.parseXml();
         String languageValue = optionsParse.languageValue;
@@ -1366,7 +1275,6 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
             UrlToHelpFilesEn = "file:///usr/lib/Andjety/Help/index_en.html";
             UrlToHelpFilesFr = "file:///usr/lib/Andjety/Help/index_fr.html";
         }
-
 
         if (languageValue.toUpperCase().equals("ENGLISH")) {
             if (Desktop.isDesktopSupported()) {
@@ -1418,7 +1326,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     private void MajAction() {
         FIndMajEngine fmw = new FIndMajEngine();
 
-        fmw.appVersion = appVersion;
+        fmw.appVersion = Constants.appVersion;
         fmw.mf = this;
         fmw.ifShowMessage = true;
 
@@ -1611,4 +1519,91 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
 
     }
     // Here I catch MalformedURLException and IOException :)
+
+    private void setSystemTrayMenu() {
+//System Tray Implémentation
+        trayIcon = null;
+        if (SystemTray.isSupported()) {
+            SystemTray tray = SystemTray.getSystemTray();
+            Image image = Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("ressources/AndjetyTray.png"));
+            ActionListener listener = new ActionListener() {
+
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if (e.getSource() == systrayQuitterItem) {
+                        QuitterQuestion();
+                    }
+                }
+            };
+
+            PopupMenu popup = new PopupMenu();
+
+            systrayQuitterItem = new MenuItem("Quitter");
+            systrayQuitterItem.addActionListener(listener);
+            popup.add(systrayQuitterItem);
+
+            trayIcon = new TrayIcon(image, "Andjety", popup);
+            trayIcon.addActionListener(listener);
+
+            try {
+                tray.add(trayIcon);
+            } catch (AWTException e) {
+                System.err.println(e);
+            }
+        } // Fin System Tray Implémentation>F
+    }
+
+    private void setLanguage() {
+        // Définition de la langue
+        OptionsParser optionsParse = new OptionsParser();
+        optionsParse.parseXml();
+
+        String languageValue = optionsParse.languageValue;
+        InputStream stream = null;
+
+        if (languageValue.toUpperCase().equals("ENGLISH")) {
+            stream = Thread.currentThread().getContextClassLoader().getResourceAsStream("languages/english.properties");
+            jMenu1.setText("File");
+            jMenuAssistant.setText("New Task");
+            jMenuItemEditeurSQL.setText("SQL Editor");
+            jMenuItem5.setText("Schedule Tasks");
+            jMenuQuitter.setText("Exit");
+            jMenu2.setText("Edit");
+            jMenuItemOptions.setText("Settings");
+            jMenu3.setText("Help");
+            jMenuItem3.setText("About Andjety");
+            jMenuItem6.setText("Check Updates");
+            jXTaskPane1.setTitle("Tasks");
+            jButtonExecTask.setText("Run task");
+            jButton3.setText("New Task");
+            jButtonGestDatabases.setText("Databases");
+            jButtonEditeurSQL.setText("SQL Editor");
+            jButtonGestTachesPlanif.setText("Schedule Tasks");
+            jButtonGestTaches.setText("Tasks");
+            jButtonAccueilToolbar.setToolTipText("Welcome");
+            jButton5.setToolTipText("New Task");
+            //jButtonBarEditeurSQL.setToolTipText("SQL Editor");
+            jButtonBarGestionTaches.setToolTipText("Tasks");
+            jButtonBarGestBases.setToolTipText("Databases");
+            jButtonBarOptions.setToolTipText("Settings");
+            jButtonBarAbout.setToolTipText("About Andjety");
+            jButtonToolbarQuitter.setToolTipText("Quit Andjety");
+            jButtonHelpButton.setToolTipText("Help");
+
+        } else if (languageValue.toUpperCase().contains("FRA")) {
+            stream = Thread.currentThread().getContextClassLoader().getResourceAsStream("languages/french.properties");
+        } else {
+            stream = Thread.currentThread().getContextClassLoader().getResourceAsStream("languages/english.properties");
+        }
+
+        //System.out.println("Current Language : " + languageValue);
+        try {
+            properties.load(stream);
+            //System.out.println("Valeur : " + properties.getProperty("s1"));
+        } catch (IOException e) {
+            System.out.println(properties.getProperty("errorOpenFile"));
+        }
+
+        repaint();
+    }
 }
