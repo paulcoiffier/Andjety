@@ -4,6 +4,7 @@
  */
 package com.mobissime.andjety.dbUtils;
 
+import com.mobissime.andjety.Constants;
 import com.mobissime.andjety.utils.OptionsParser;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,15 +25,9 @@ public class DerbyConnexion {
         Connection connection = null;
         try {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver").newInstance();
-            connection = DriverManager.getConnection("jdbc:derby://localhost/andjety;user=andjety;password=Polo021287");
+            connection = DriverManager.getConnection(Constants.derbyDatabaseUrl);
 
-        } catch (SQLException ex) {
-            erreurConnexion = ex.getMessage();
-        } catch (InstantiationException ex) {
-            erreurConnexion = ex.getMessage();
-        } catch (IllegalAccessException ex) {
-            erreurConnexion = ex.getMessage();
-        } catch (ClassNotFoundException ex) {
+        } catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException ex) {
             erreurConnexion = ex.getMessage();
         }
         return connection;

@@ -32,11 +32,9 @@ public class OracleConnexion {
             System.out.println("URL : " + url);
             connection = DriverManager.getConnection(url, user, password);
 
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(OracleConnexion.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            erreurConnexion = ex.getMessage();
-        } 
+        }
         return connection;
     }
 }

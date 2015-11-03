@@ -23,13 +23,7 @@ public class MysqlConnexion {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection("jdbc:mysql://" + serveur + "/" + base, user, password);
             erreurConnexion = "";
-        } catch (SQLException ex) {
-            erreurConnexion = ex.getMessage();
-        } catch (InstantiationException ex) {
-            erreurConnexion = ex.getMessage();
-        } catch (IllegalAccessException ex) {
-            erreurConnexion = ex.getMessage();
-        } catch (ClassNotFoundException ex) {
+        } catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException ex) {
             erreurConnexion = ex.getMessage();
         }
         return connection;
