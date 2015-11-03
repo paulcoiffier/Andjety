@@ -1388,10 +1388,9 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Object[] options = {"Oui",
-            "Non"};
-        int response = JOptionPane.showOptionDialog(this, "Etes-vous sur de vouloir purger la liste des serveurs ? Cela aura pour effet de supprimer l'ensemble des bases de données de la liste.",
-                "Question",
+        Object[] options = {properties.getProperty("yesButton"), properties.getProperty("noButton")};
+        int response = JOptionPane.showOptionDialog(this, properties.getProperty("question_clear_database"),
+                properties.getProperty("title_question"),
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
                 null, options, options[1]);
