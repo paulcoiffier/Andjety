@@ -22,7 +22,7 @@ import com.mobissime.andjety.windows.EditorSQL;
 import com.mobissime.andjety.dialogs.AboutDialog;
 import com.mobissime.andjety.windows.DatabasesPanel;
 import com.mobissime.andjety.windows.TasksPanel;
-import com.mobissime.andjety.windows.OptionsDialog;
+import com.mobissime.andjety.dialogs.OptionsDialog;
 import com.mobissime.andjety.windows.ExcelViewJPanel;
 import com.mobissime.andjety.utils.FIndMajEngine;
 import com.mobissime.andjety.utils.XMLTools;
@@ -411,7 +411,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         //Custom button text
         Object[] options = {properties.getProperty("yesButton"),
             properties.getProperty("noButton")};
-        int response = JOptionPane.showOptionDialog(null, properties.getProperty("exitQuestion"),
+        int response = JOptionPane.showOptionDialog(this, properties.getProperty("exitQuestion"),
                 properties.getProperty("exitTitle"),
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
