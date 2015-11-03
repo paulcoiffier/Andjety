@@ -41,7 +41,6 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     public static MainFen laFenetre;
     public String driver = "org.apache.derby.jdbc.ClientDriver";
     private static String dbURL = "jdbc:derby://localhost:1527/andjety;create=true;user=andjety;password=Polo021287";
-    public static String appVersion;
     public List<TaskMotorThread> threadArray;
     public static List<TaskMotorThread> threadArrayListe;
     private ArrayList<MainFenObervateur> listObservateur = new ArrayList<MainFenObervateur>();
@@ -61,7 +60,6 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
      */
     public MainFen() {
         // DEFINITION DE LA VERSION
-        appVersion = "2.1";
         /**
          * *************************
          */
@@ -212,7 +210,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         laFenetre = this;
 
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("ressources/AndjetyIcon.png")));
-        this.setTitle("Andjety " + appVersion);
+        this.setTitle("Andjety " + Constants.appVersion);
 
         // Ajout du panel d'accueil
         affichePanelAccueil();
