@@ -1,10 +1,9 @@
 /*
- * Andjety 2.0 - Code by Paul Coiffier - 2012/2013
+ * Andjety 3.0 - Code by Paul Coiffier - 2012 - 2015
  * 
  */
 package com.mobissime.andjety.dbUtils;
 
-import com.mobissime.andjety.utils.OptionsParser;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -25,13 +24,13 @@ public class MysqlConnexion {
             connection = DriverManager.getConnection("jdbc:mysql://" + serveur + "/" + base, user, password);
             erreurConnexion = "";
         } catch (SQLException ex) {
-            erreurConnexion = ex.getMessage().toString();
+            erreurConnexion = ex.getMessage();
         } catch (InstantiationException ex) {
-            erreurConnexion = ex.getMessage().toString();
+            erreurConnexion = ex.getMessage();
         } catch (IllegalAccessException ex) {
-            erreurConnexion = ex.getMessage().toString();
+            erreurConnexion = ex.getMessage();
         } catch (ClassNotFoundException ex) {
-            erreurConnexion = ex.getMessage().toString();
+            erreurConnexion = ex.getMessage();
         }
         return connection;
     }

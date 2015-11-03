@@ -1,5 +1,5 @@
 /*
- * Andjety 2.0 - Code by Paul Coiffier - 2012/2013
+ * Andjety 3.0 - Code by Paul Coiffier - 2012 - 2015
  * 
  */
 package com.mobissime.andjety.dbUtils;
@@ -35,7 +35,7 @@ public class OracleConnexion {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(OracleConnexion.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            erreurConnexion = ex.getMessage().toString();
+            erreurConnexion = ex.getMessage();
         } 
         return connection;
     }

@@ -1,5 +1,5 @@
 /*
- * Andjety 2.0 - Code by Paul Coiffier - 2012/2013
+ * Andjety 3.0 - Code by Paul Coiffier - 2012 - 2015
  * 
  */
 package com.mobissime.andjety.dbUtils;
@@ -27,13 +27,13 @@ public class DerbyConnexion {
             connection = DriverManager.getConnection("jdbc:derby://localhost/andjety;user=andjety;password=Polo021287");
 
         } catch (SQLException ex) {
-            erreurConnexion = ex.getMessage().toString();
+            erreurConnexion = ex.getMessage();
         } catch (InstantiationException ex) {
-            erreurConnexion = ex.getMessage().toString();
+            erreurConnexion = ex.getMessage();
         } catch (IllegalAccessException ex) {
-            erreurConnexion = ex.getMessage().toString();
+            erreurConnexion = ex.getMessage();
         } catch (ClassNotFoundException ex) {
-            erreurConnexion = ex.getMessage().toString();
+            erreurConnexion = ex.getMessage();
         }
         return connection;
     }
