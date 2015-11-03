@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <java version="1.6.0_32" class="java.beans.XMLDecoder"> 
- <object class="objects.TaskObjListe"> 
+ <object class="com.mobissime.andjety.objects.TaskObjListe"> 
   <void property="dbObjListe"> 
    <object class="java.util.ArrayList"> 
     <void method="add"> 
-     <object class="objects.TaskObj"> 
+     <object class="com.mobissime.andjety.objects.TaskObj"> 
       <void property="TASK_LIBELLE"> 
        <string>tache2</string> 
       </void> 
@@ -28,7 +28,7 @@
       <void property="TASK_SERVERSLIST"> 
        <object class="java.util.ArrayList"> 
         <void method="add"> 
-         <object class="objects.DatabaseObj"> 
+         <object class="com.mobissime.andjety.objects.DatabaseObj"> 
           <void property="dblist_instance"> 
            <string>test</string> 
           </void> 
@@ -50,7 +50,7 @@
          </object> 
         </void> 
         <void method="add"> 
-         <object class="objects.DatabaseObj"> 
+         <object class="com.mobissime.andjety.objects.DatabaseObj"> 
           <void property="dblist_instance"> 
            <string>localhost</string> 
           </void> 

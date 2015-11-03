@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <java version="1.6.0_32" class="java.beans.XMLDecoder"> 
- <object class="objects.TaskExecListe"> 
+ <object class="com.mobissime.andjety.objects.TaskExecListe"> 
   <void property="listOfTasksExec"> 
    <object class="java.util.ArrayList"> 
     <void method="add"> 
-     <object class="objects.TasksexecObj"> 
+     <object class="com.mobissime.andjety.objects.TasksexecObj"> 
       <void property="dateheure"> 
        <string>10022013-12-30-07</string> 
       </void> 

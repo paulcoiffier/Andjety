@@ -2,12 +2,12 @@
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
   <persistence-unit name="AndjetyPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>entities.Databaselist</class>
-    <class>entities.Tasks</class>
-    <class>entities.Tasksdb</class>
-    <class>entities.Tasksexec</class>
-    <class>entities.Scheduletasks</class>
-    <class>entities.Vuedbtaskliste</class>
+    <class>com.mobissime.andjety.entities.Tasksdb</class>
+    <class>com.mobissime.andjety.entities.Tasks</class>
+    <class>com.mobissime.andjety.entities.Databaselist</class>
+    <class>com.mobissime.andjety.entities.Tasksexec</class>
+    <class>com.mobissime.andjety.entities.Scheduletasks</class>
+    <class>com.mobissime.andjety.entities.Vuedbtaskliste</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/andjety"/>
       <property name="javax.persistence.jdbc.password" value="Polo021287"/>
