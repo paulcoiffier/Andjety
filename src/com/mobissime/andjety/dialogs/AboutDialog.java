@@ -2,7 +2,9 @@
  * Andjety 2.0 - Code by Paul Coiffier - 2012/2013
  * 
  */
-package com.mobissime.andjety.windows;
+package com.mobissime.andjety.dialogs;
+
+import com.mobissime.andjety.Constants;
 
 /*
  * To change this template, choose Tools | Templates
@@ -21,6 +23,7 @@ public class AboutDialog extends javax.swing.JDialog {
     public AboutDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        jLabel1.setText("Andjety v" + Constants.appVersion);
     }
 
     /**
@@ -43,7 +46,7 @@ public class AboutDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jLabel2.setText("Developed by Paul Coiffier");
+        jLabel2.setText("Copyright 2012-2015 Paul Coiffier");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/tick.png"))); // NOI18N
         jButton1.setText("Fermer");
@@ -64,7 +67,7 @@ public class AboutDialog extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jLabel1.setText("Andjety 2.1");
 
-        jLabel5.setText("www.saphirsoftware.com");
+        jLabel5.setText("www.mobissime.com");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

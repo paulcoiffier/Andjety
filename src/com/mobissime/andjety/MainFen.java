@@ -19,7 +19,7 @@ import com.mobissime.andjety.windows.PlanifTachesPanel;
 import com.mobissime.andjety.windows.LogPanel;
 import com.mobissime.andjety.windows.TaskMotor;
 import com.mobissime.andjety.windows.EditorSQL;
-import com.mobissime.andjety.windows.AboutDialog;
+import com.mobissime.andjety.dialogs.AboutDialog;
 import com.mobissime.andjety.windows.DatabasesPanel;
 import com.mobissime.andjety.windows.TasksPanel;
 import com.mobissime.andjety.windows.OptionsDialog;
