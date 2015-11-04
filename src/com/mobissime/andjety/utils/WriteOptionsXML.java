@@ -88,11 +88,13 @@ public class WriteOptionsXML {
 
             String path = "";
             
-            if (OSValidator.isUnix()) {
+            /*if (OSValidator.isUnix()) {
                 path = "/usr/lib/Andjety";
             } else {
                 path = System.getProperty("user.dir").toString();
-            }
+            }*/
+            
+            path = System.getProperty("user.dir");
 
             
             File file = new File(path + "/Files/options.xml");
