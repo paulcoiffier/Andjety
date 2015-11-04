@@ -67,7 +67,7 @@ public class AboutDialog extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jLabel1.setText("Andjety 2.1");
 
-        jLabel5.setText("www.mobissime.com");
+        jLabel5.setText("https://github.com/paulcoiffier/Andjety");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

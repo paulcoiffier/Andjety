@@ -118,7 +118,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="www.mobissime.com"/>
+        <Property name="text" type="java.lang.String" value="https://github.com/paulcoiffier/Andjety"/>
       </Properties>
     </Component>
   </SubComponents>

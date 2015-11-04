@@ -89,7 +89,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         this.setStatusMessage("");
         this.setSystemTrayMenu();
 
-        jButtonHelpButton.setVisible(false);
+        //jButtonHelpButton.setVisible(false);
         jProgressBarUpdateObjet.setVisible(false);
         jProgressBarUpdate.setVisible(false);
         //jButtonGestTachesPlanif
@@ -1321,14 +1321,15 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         String UrlToHelpFilesEn;
         String UrlToHelpFilesFr;
 
-        if (OSValidator.isWindows()) {
-            UrlToHelpFilesEn = "file:///" + executionPath.replace("\\", "/") + "/Help/index_en.html";
-            UrlToHelpFilesFr = "file:///" + executionPath.replace("\\", "/") + "/Help/index_fr.html";
-            //JOptionPane.showMessageDialog(this, "UrlToHelpFilesFr : " + UrlToHelpFilesFr);
-        } else {
-            UrlToHelpFilesEn = "file:///usr/lib/Andjety/Help/index_en.html";
-            UrlToHelpFilesFr = "file:///usr/lib/Andjety/Help/index_fr.html";
-        }
+        /*if (OSValidator.isWindows()) {
+         UrlToHelpFilesEn = "file:///" + executionPath.replace("\\", "/") + "/Help/index_en.html";
+         UrlToHelpFilesFr = "file:///" + executionPath.replace("\\", "/") + "/Help/index_fr.html";
+         } else {
+         UrlToHelpFilesEn = "file:///usr/lib/Andjety/Help/index_en.html";
+         UrlToHelpFilesFr = "file:///usr/lib/Andjety/Help/index_fr.html";
+         }*/
+        UrlToHelpFilesEn = "file:///" + executionPath.replace("\\", "/") + "/Help/index_en.html";
+        UrlToHelpFilesFr = "file:///" + executionPath.replace("\\", "/") + "/Help/index_fr.html";
 
         if (languageValue.toUpperCase().equals("ENGLISH")) {
             if (Desktop.isDesktopSupported()) {
