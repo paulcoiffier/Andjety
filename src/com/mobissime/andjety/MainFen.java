@@ -247,7 +247,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                     //Custom button text
                     Object[] options = {"Oui",
                         "Non"};
-                    JOptionPane.showMessageDialog(null, "Le téléchargement de la mise à jour est terminé. Andjety va maintenant ce fermer afin de procéder à l'installation de la mise à jour.",
+                    JOptionPane.showMessageDialog(MainFen.this, "Le téléchargement de la mise à jour est terminé. Andjety va maintenant ce fermer afin de procéder à l'installation de la mise à jour.",
                             "Mise à jour", JOptionPane.INFORMATION_MESSAGE);
 
                     // Execution de la MAJ
@@ -1032,7 +1032,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                 }
             }
         } else {
-            JOptionPane.showMessageDialog(null, properties.getProperty("messageSelectTask"), "Andjety", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, properties.getProperty("messageSelectTask"), "Andjety", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jButtonExecTaskActionPerformed
 
