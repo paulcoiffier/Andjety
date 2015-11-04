@@ -63,10 +63,9 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     public Scheduler scheduler;
     public static MainFen laFenetre;
     public String driver = "org.apache.derby.jdbc.ClientDriver";
-    private static String dbURL = "jdbc:derby://localhost:1527/andjety;create=true;user=andjety;password=Polo021287";
     public List<TaskMotorThread> threadArray;
     public static List<TaskMotorThread> threadArrayListe;
-    private ArrayList<MainFenObervateur> listObservateur = new ArrayList<MainFenObervateur>();
+    private ArrayList<MainFenObervateur> listObservateur = new ArrayList<>();
     private DatabaseListeObj dbListObj;
     private TaskObjListe taskListObj;
     private TaskExecListe taskExecListObj;
@@ -78,20 +77,14 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     private MenuItem systrayQuitterItem;
     public TrayIcon trayIcon;
 
-    /**
-     * Creates new form MainFen
-     */
     public MainFen() {
-        // DEFINITION DE LA VERSION
-        /**
-         * *************************
-         */
+
         initComponents();
 
         JDialog.setDefaultLookAndFeelDecorated(true);
 
         // Initialisation message StatusBar
-        setStatusMessage("");
+        this.setStatusMessage("");
         this.setSystemTrayMenu();
 
         jButtonHelpButton.setVisible(false);
@@ -103,12 +96,11 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         jSeparator1.setVisible(false);
         jMenuItemEditeurSQL.setVisible(false);
         jSeparator10.setVisible(false);
-        
+
         //jButtonEditeurSQL.setVisible(false);
         //jButtonEditeurSQL.setEnabled(false);
         //jButtonBarEditeurSQL.setVisible(false);
         //jButtonTachesPlanif.setVisible(false);
-
         jProgressBarUpdateObjet = jProgressBarUpdate;
 
         this.addObservateur(new MainFenObervateur() {
@@ -139,14 +131,13 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
             taskExecListObj = (TaskExecListe) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_tasksexec.xml");
             listOfLogs = (LogObjArrayObj) XMLTools.decodeFromFile(pathOfProject + "/Files/Andjety_tasks_logs.xml");
 
-            // Ajoute le chargement de scheduleTasksListObj
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        threadArray = new ArrayList<TaskMotorThread>();
+        threadArray = new ArrayList<>();
         threadArrayListe = threadArray;
 
         this.setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
@@ -169,7 +160,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
          * Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null,
          * ex); }
          */
-        LoadTasksDataList();
+        this.LoadTasksDataList();
 
         // Démarrage du scheduler
         /*
@@ -216,7 +207,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
 
         // Recherche de l'onglet ouvert qui porte le nom de la tâche, et fermeture
         for (int i = 0; i < jTabbedPane1.getTabCount(); i++) {
-            if (jTabbedPane1.getTitleAt(i).toString().equals(TabName)) {
+            if (jTabbedPane1.getTitleAt(i).equals(TabName)) {
                 jTabbedPane1.remove(i);
             }
         }
@@ -228,7 +219,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     }
 
     public void purgeDatabaseArray() {
-        ArrayList<DatabaseObj> arrayDbListe = new ArrayList<DatabaseObj>();
+        ArrayList<DatabaseObj> arrayDbListe = new ArrayList<>();
         dbListObj.setDbListe(arrayDbListe);
         serialiseServersTOXML();
     }
@@ -244,9 +235,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
             @Override
             public void run() {
                 try {
-                    //Custom button text
-                    Object[] options = {"Oui",
-                        "Non"};
+
                     JOptionPane.showMessageDialog(MainFen.this, "Le téléchargement de la mise à jour est terminé. Andjety va maintenant ce fermer afin de procéder à l'installation de la mise à jour.",
                             "Mise à jour", JOptionPane.INFORMATION_MESSAGE);
 
@@ -329,11 +318,11 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
 
             for (TaskObj tsk : taskListObj.getDbObjListe()) {
                 //System.out.println("Ajout tache : " + resultList.get(i).getTaskLibelle().toString());
-                listModelTable.addElement(tsk.getTASK_LIBELLE().toString());
+                listModelTable.addElement(tsk.getTASK_LIBELLE());
             }
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Attention : Impossible de ce connecter à la base de données d'Andjety, l'application va ce fermer. Détails : " + e.getMessage().toString(), "Andjety", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Attention : Impossible de ce connecter à la base de données d'Andjety, l'application va ce fermer. Détails : " + e.getMessage(), "Andjety", JOptionPane.ERROR_MESSAGE);
             System.exit(1);
         }
 
@@ -1075,7 +1064,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
             }
         }
 
-        ArrayList<ScheduleTaskObj> testOfListe = new ArrayList<ScheduleTaskObj>();
+        ArrayList<ScheduleTaskObj> testOfListe = new ArrayList<>();
         if (trouve == false) {
             //scheduleTasksListObj.getListeOfScheduleTasks().add(laTache);
             testOfListe.add(laTache);
@@ -1112,7 +1101,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
             }
         }
 
-        ArrayList<TaskObj> testOfListe = new ArrayList<TaskObj>();
+        ArrayList<TaskObj> testOfListe = new ArrayList<>();
         if (trouve == false) {
             taskListObj.getDbObjListe().add(laNouvelleTache);
             //testOfListe.add(laNouvelleTache);
@@ -1241,12 +1230,11 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
             // Sérialisation des tables & attributs du projet
             String pathOfProject = System.getProperty("user.dir");
             /*if (OSValidator.isUnix()) {
-                XMLTools.encodeToFile(dbListObj, "/usr/lib/Andjety/Files/Andjety_servers.xml");
-            } else {
-                XMLTools.encodeToFile(dbListObj, pathOfProject + "/Files/Andjety_servers.xml");
-            }*/
-                            XMLTools.encodeToFile(dbListObj, pathOfProject + "/Files/Andjety_servers.xml");
-
+             XMLTools.encodeToFile(dbListObj, "/usr/lib/Andjety/Files/Andjety_servers.xml");
+             } else {
+             XMLTools.encodeToFile(dbListObj, pathOfProject + "/Files/Andjety_servers.xml");
+             }*/
+            XMLTools.encodeToFile(dbListObj, pathOfProject + "/Files/Andjety_servers.xml");
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null, ex);
@@ -1298,8 +1286,8 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         InputStream stream = null;
 
         String executionPath = System.getProperty("user.dir");
-        String UrlToHelpFilesEn = null;
-        String UrlToHelpFilesFr = null;
+        String UrlToHelpFilesEn;
+        String UrlToHelpFilesFr;
 
         if (OSValidator.isWindows()) {
             UrlToHelpFilesEn = "file:///" + executionPath.replace("\\", "/") + "/Help/index_en.html";
@@ -1383,7 +1371,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
 
         if (response == 0) {
 
-            ArrayList<TasksexecObj> newList = new ArrayList<TasksexecObj>();
+            ArrayList<TasksexecObj> newList = new ArrayList<>();
             taskExecListObj.setListOfTasksExec(newList);
             serialiseTasksExecTOXML();
             updateObservateur();
@@ -1505,7 +1493,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
      */
     @Override
     public void delObservateur() {
-        this.listObservateur = new ArrayList<MainFenObervateur>();
+        this.listObservateur = new ArrayList<>();
     }
 
     /**
@@ -1536,31 +1524,24 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
             URL url = new URL("http://www.saphirsoftware.com/softs/");
             url.openConnection();
 
-            // Download routine
-            InputStream reader = url.openStream();
-            FileOutputStream writer = new FileOutputStream("Andjety_setup.exe");
+            try ( // Download routine
+                    InputStream reader = url.openStream();
+                    FileOutputStream writer = new FileOutputStream("Andjety_setup.exe")) {
 
-            byte[] buffer = new byte[153600];
-            int totalBytesRead = 0;
-            int bytesRead = 0;
+                byte[] buffer = new byte[153600];
+                int totalBytesRead = 0;
+                int bytesRead = 0;
 
-            while ((bytesRead = reader.read(buffer)) > 0) {
-                writer.write(buffer, 0, bytesRead);
-                buffer = new byte[153600];
-                totalBytesRead += bytesRead;
+                while ((bytesRead = reader.read(buffer)) > 0) {
+                    writer.write(buffer, 0, bytesRead);
+                    buffer = new byte[153600];
+                    totalBytesRead += bytesRead;
+                }
+
+                // Download finished
+                long endTime = System.currentTimeMillis();
+
             }
-
-            // Download finished
-            long endTime = System.currentTimeMillis();
-
-            // Output download information
-            System.out.println("Done.");
-            System.out.println((new Integer(totalBytesRead).toString()) + " bytes read.");
-            System.out.println("It took " + (new Long(endTime - startTime).toString()) + " milliseconds.");
-
-            // Close input and output streams
-            writer.close();
-            reader.close();
         } catch (IOException ex) {
             Exceptions.printStackTrace(ex);
         }
@@ -1607,7 +1588,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         optionsParse.parseXml();
 
         String languageValue = optionsParse.languageValue;
-        InputStream stream = null;
+        InputStream stream;
 
         if (languageValue.toUpperCase().equals("ENGLISH")) {
             stream = Thread.currentThread().getContextClassLoader().getResourceAsStream("languages/english.properties");
