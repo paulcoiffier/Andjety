@@ -20,14 +20,16 @@ import com.mobissime.andjety.models.ResultSetTableModel;
 import com.mobissime.andjety.objects.DatabaseListeObj;
 import com.mobissime.andjety.objects.DatabaseObj;
 import org.fife.ui.autocomplete.*;
+import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
+import org.fife.ui.rtextarea.RTextScrollPane;
 
 /**
  *
  * @author Paul Coiffier
  */
 public class EditorSQL extends javax.swing.JPanel {
-
+    
     private DatabaseListeObj dbo;
 
     /**
@@ -45,17 +47,14 @@ public class EditorSQL extends javax.swing.JPanel {
         rSyntaxTextArea1.setCodeFoldingEnabled(true);
         rSyntaxTextArea1.setAntiAliasingEnabled(true);
 
-
-        // ComboBox des tâches
         jComboBoxDatabases.removeAllItems();
-
+        
         List<DatabaseObj> resultList = dbo.getDbListe();
-
+        
         for (int i = 0; i < resultList.size(); i++) {
             jComboBoxDatabases.addItem(resultList.get(i).getDblist_libelle().toString());
         }
-
-
+        
     }
 
     /**
@@ -76,7 +75,7 @@ public class EditorSQL extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        rTextScrollPane1 = new org.fife.ui.rtextarea.RTextScrollPane();
         rSyntaxTextArea1 = new org.fife.ui.rsyntaxtextarea.RSyntaxTextArea();
         jToolBar1 = new javax.swing.JToolBar();
         jComboBoxDatabases = new javax.swing.JComboBox();
@@ -108,7 +107,7 @@ public class EditorSQL extends javax.swing.JPanel {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Résultat", jPanel2);
@@ -123,7 +122,7 @@ public class EditorSQL extends javax.swing.JPanel {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Erreur", jPanel3);
@@ -136,19 +135,18 @@ public class EditorSQL extends javax.swing.JPanel {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jSplitPane1.setRightComponent(jPanel1);
 
-        jScrollPane1.setMinimumSize(new java.awt.Dimension(23, 300));
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(166, 200));
+        rTextScrollPane1.setPreferredSize(new java.awt.Dimension(24, 300));
 
         rSyntaxTextArea1.setColumns(20);
         rSyntaxTextArea1.setRows(5);
-        jScrollPane1.setViewportView(rSyntaxTextArea1);
+        rTextScrollPane1.setViewportView(rSyntaxTextArea1);
 
-        jSplitPane1.setLeftComponent(jScrollPane1);
+        jSplitPane1.setLeftComponent(rTextScrollPane1);
 
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
@@ -201,23 +199,23 @@ public class EditorSQL extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     public void displayData(ResultSet rs) {
-
+        
         int i;
         int count;
         String a[];
         String header[] = {"1", "2", "3", "4", "5"};   //Table Header Values, change, as your wish
         count = header.length;
-
+        
         DefaultTableModel model = new DefaultTableModel();
-
+        
         for (i = 0; i < count; i++) {
             model.addColumn(header[i]);
         }
         jXTable2.setModel(model);                             //Represents table Model
         jXTable2.add(jXTable2.getTableHeader(), BorderLayout.NORTH);
-
+        
         a = new String[count];
-
+        
         try {
             while (rs.next()) {
                 for (i = 0; i < count; i++) {
@@ -230,32 +228,30 @@ public class EditorSQL extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Exception : " + e, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
+    
     private CompletionProvider createCompletionProvider() {
-
+        
         DefaultCompletionProvider provider = new DefaultCompletionProvider();
-
+        
         FunctionCompletion fct2 = new FunctionCompletion(provider, "DELETE", "Statement ");
         fct2.setShortDescription("The DELETE statement follows the syntax: <br /><br />"
                 + "&nbsp;&nbsp;&nbsp;&nbsp;<strong>DELETE</strong> FROM <i>table_name</i> [<strong>WHERE</strong> condition]; <br /><br />"
                 + "Any rows that match the WHERE condition will be removed from the table. "
                 + "If the WHERE clause is omitted, all rows in the table are removed. The DELETE statement should thus be used with caution.");
         provider.addCompletion(fct2);
-
+        
         FunctionCompletion fctInsert = new FunctionCompletion(provider, "INSERT", "Statement ");
         fctInsert.setShortDescription("An SQL <strong>INSERT</strong> statement adds one or more records to any single table in a relational database."
                 + "Insert statements have the following form: <br /><br />"
                 + "<strong>INSERT</strong> INTO <i>table</i> (<i>column1 [, column2, column3 ... ]</i>) VALUES (<i>value1 [, value2, value3 ... ]</i>)<br />"
                 + "<strong>INSERT</strong> INTO table VALUES (<i>value1, [value2, ... ]</i>)");
         provider.addCompletion(fctInsert);
-
+        
         FunctionCompletion fct = new FunctionCompletion(provider, "SELECT", "Statement ");
         fct.setShortDescription("The <strong>SELECT</strong> statement is used to select data from a database."
                 + " The result is stored in a result table, called the result-set.");
         provider.addCompletion(fct);
-
-
-
+        
         VariableCompletion fctFrom = new VariableCompletion(provider, "FROM", "Clause ");
         fctFrom.setShortDescription("The SQL <strong>FROM</strong> clause is the source of a rowset to be operated upon in a "
                 + "Data Manipulation Language (DML) statement. From clauses are very common, and will provide"
@@ -263,22 +259,21 @@ public class EditorSQL extends javax.swing.JPanel {
                 + " and the target rows to be deleted in a Delete statement.<br /><br />"
                 + "<strong>FROM</strong> is an SQL reserved word in the SQL standard");
         provider.addCompletion(fctFrom);
-
+        
         VariableCompletion fctHaving = new VariableCompletion(provider, "HAVING", "Clause ");
         fctHaving.setShortDescription("A <strong>HAVING</strong> clause in SQL specifies that an SQL SELECT statement "
                 + "should only return rows where aggregate values meet the specified conditions. It was"
                 + "added[when?] to the SQL language because the WHERE keyword could not be used with aggregate functions");
         provider.addCompletion(fctHaving);
-
-
+        
         VariableCompletion fctJoin = new VariableCompletion(provider, "JOIN", "Clause ");
         fctJoin.setShortDescription("An SQL <strong>JOIN</strong> clause combines records from two or more tables in a database. It creates a set that can be saved as a table or used as is. A JOIN is a means for combining fields from two tables by using values common to each. ANSI standard SQL specifies four types of JOIN: INNER, OUTER, LEFT, and RIGHT. As a special case, a table (base table, view, or joined table) can JOIN to itself in a self-join.");
         provider.addCompletion(fctJoin);
-
+        
         MarkupTagCompletion mkp = new MarkupTagCompletion(provider, "NULL");
         mkp.setDescription("Null is a special marker used in Structured Query Language (SQL) to indicate that a data value does not exist in the database. Introduced by the creator of the relational database model, E. F. Codd, SQL Null serves to fulfill the requirement that all true relational database management systems (RDBMS) support a representation of 'missing information and inapplicable information'. Codd also introduced the use of the lowercase Greek omega (ω) symbol to represent Null in database theory. NULL is also an SQL reserved keyword used to identify the Null special marker.");
         provider.addCompletion(mkp);
-
+        
         provider.addCompletion(new BasicCompletion(provider, "while"));
 
         /*
@@ -287,42 +282,39 @@ public class EditorSQL extends javax.swing.JPanel {
          * provider.addCompletion(new ShorthandCompletion(provider, "syserr",
          * "System.err.println(", "System.err.println("));
          */
-
         return provider;
-
+        
     }
 
     private void jButtonExecRequeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExecRequeteActionPerformed
-
-
-
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
-
+            
             @Override
             public void run() {
-
+                
                 final WaitDialog assitantFen = new WaitDialog(null, false);
                 java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-
+                
                 assitantFen.setLocation(
                         (screenSize.width - assitantFen.getWidth()) / 2,
                         (screenSize.height - assitantFen.getHeight()) / 2);
-
+                
                 assitantFen.setTitle("Andjety");
                 assitantFen.show();
-
+                
                 try {
-
+                    
                     DatabaseObj newDeb = null;
                     for (DatabaseObj dboo : dbo.getDbListe()) {
                         if (dboo.getDblist_libelle().equals(jComboBoxDatabases.getSelectedItem().toString())) {
                             newDeb = dboo;
                         }
                     }
-
+                    
                     String url = null;
                     Connection conn = null;
-
+                    
                     if (newDeb.getDblist_sgbd().toUpperCase().equals("ORACLE")) {
                         Class.forName("oracle.jdbc.driver.OracleDriver");
                         url = "jdbc:oracle:thin:@" + newDeb.getDblist_libelle() + ":1521:" + newDeb.getDblist_instance();
@@ -332,20 +324,20 @@ public class EditorSQL extends javax.swing.JPanel {
                         conn = DriverManager.getConnection("jdbc:mysql://" + newDeb.getDblist_ip() + "/"
                                 + newDeb.getDblist_instance() + "?" + "user=" + newDeb.getDblist_user() + "&password=" + newDeb.getDblist_password());
                     }
-
+                    
                     conn.setAutoCommit(false);
                     final Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
                     // On supprime les point-virgules
                     java.awt.EventQueue.invokeLater(new Runnable() {
-
+                        
                         @Override
                         public void run() {
                             try {
-
+                                
                                 String text = rSyntaxTextArea1.getText().toString();
                                 ResultSet rset = stmt.executeQuery(text);
-
+                                
                                 jTabbedPane1.setSelectedIndex(0);
                                 jXTable2.setModel(new ResultSetTableModel(rset));
 
@@ -376,13 +368,13 @@ public class EditorSQL extends javax.swing.JPanel {
                                 java.sql.Date sDate = new java.sql.Date(System.currentTimeMillis());
                                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh-mm-ss");
                                 jTextPane1.setText("");
-
+                                
                                 jTextPane1.setText(jTextPane1.getText() + "\n" + sdf.format(sDate) + " : " + ex.getMessage().toString());
-
+                                
                             }
                         }
                     });
-
+                    
                 } catch (InstantiationException ex) {
                     //Exceptions.printStackTrace(ex);
                 } catch (IllegalAccessException ex) {
@@ -392,84 +384,81 @@ public class EditorSQL extends javax.swing.JPanel {
                     java.sql.Date sDate = new java.sql.Date(System.currentTimeMillis());
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh-mm-ss");
                     jTextPane1.setText("");
-
+                    
                     jTextPane1.setText(jTextPane1.getText() + "\n" + sdf.format(sDate) + " : " + ex.getMessage().toString());
                     //JOptionPane.showMessageDialog(null, "Exception : " + ex.getMessage().toString(), "Error", JOptionPane.ERROR_MESSAGE);
                 } catch (ClassNotFoundException ex) {
                     JOptionPane.showMessageDialog(null, "Exception : " + ex.getMessage().toString(), "Error", JOptionPane.ERROR_MESSAGE);
                 }
                 
-                
             }
         });
 
     }//GEN-LAST:event_jButtonExecRequeteActionPerformed
-
+    
     class BasicThread2 implements Runnable {
-
+        
         @Override
         public void run() {
             final String[] splitted = rSyntaxTextArea1.getText().toString().split(";");
-
+            
             int nblignes = splitted.length;
             //System.out.println("Nombre de lignes : " + nblignes);
 
             for (int i = 0; i < splitted.length; i++) {
-
+                
                 try {
                     Thread.sleep(400);
                 } catch (Exception e) {
                 }
-
-
+                
                 final String toto = splitted[i].trim();
-
+                
                 java.awt.EventQueue.invokeLater(new Runnable() {
-
+                    
                     @Override
                     public void run() {
                         try {
                             System.out.println("Requete : " + toto.trim());
-
+                            
                             DBUtils dbu = new DBUtils();
                             Databaselist newDeb = dbu.getDatabase(jComboBoxDatabases.getSelectedItem().toString());
-
+                            
                             String url = "jdbc:oracle:thin:@" + newDeb.getDblistIp() + ":1521:" + newDeb.getDblistInstance();
-
-                            Connection conn =
-                                    DriverManager.getConnection(url, newDeb.getDblistUser(), newDeb.getDblistPassword());
-
+                            
+                            Connection conn
+                                    = DriverManager.getConnection(url, newDeb.getDblistUser(), newDeb.getDblistPassword());
+                            
                             conn.setAutoCommit(false);
                             Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
                             // On supprime les point-virgules
                             ResultSet rset = stmt.executeQuery(toto.trim());
-
+                            
                             jTabbedPane1.setSelectedIndex(0);
                             jXTable2.setModel(new ResultSetTableModel(rset));
-
+                            
                             if (rSyntaxTextArea1.getCaretPosition() == 0) {
                                 rSyntaxTextArea1.setCaretPosition(toto.length() + 2);
                             } else {
                                 rSyntaxTextArea1.setCaretPosition(rSyntaxTextArea1.getCaretPosition() + toto.length() + 2);
                             }
-
+                            
                         } catch (SQLException ex) {
                             Logger.getLogger(EditorSQL.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
                 });
-
-
+                
             }
         }
     }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+        
         Thread timeThread = new Thread(new EditorSQL.BasicThread2());
         timeThread.start();
-
+        
 
     }//GEN-LAST:event_jButton2ActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -479,7 +468,6 @@ public class EditorSQL extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JToolBar.Separator jSeparator1;
@@ -490,5 +478,6 @@ public class EditorSQL extends javax.swing.JPanel {
     private javax.swing.JToolBar jToolBar1;
     private org.jdesktop.swingx.JXTable jXTable2;
     private org.fife.ui.rsyntaxtextarea.RSyntaxTextArea rSyntaxTextArea1;
+    private org.fife.ui.rtextarea.RTextScrollPane rTextScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

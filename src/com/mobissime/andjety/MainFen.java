@@ -103,6 +103,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         jSeparator1.setVisible(false);
         jMenuItemEditeurSQL.setVisible(false);
         jSeparator10.setVisible(false);
+        
         //jButtonEditeurSQL.setVisible(false);
         //jButtonEditeurSQL.setEnabled(false);
         //jButtonBarEditeurSQL.setVisible(false);
