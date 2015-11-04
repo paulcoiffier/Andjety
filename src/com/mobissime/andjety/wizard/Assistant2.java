@@ -67,7 +67,7 @@ public class Assistant2 extends javax.swing.JDialog {
         } catch (IOException e) {
             System.out.println(properties.getProperty("errorOpenFile"));
         }
-        
+
         jLabel2.setText(properties.getProperty("wizardTitle"));
         jLabel5.setText(properties.getProperty("wizard2Message1"));
         jButton1.setText(properties.getProperty("finishButton"));
@@ -80,21 +80,20 @@ public class Assistant2 extends javax.swing.JDialog {
             public void run() {
 
                // setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-              //  DerbyConnexion msConObj = new DerbyConnexion();
-              //  Connection dbConMysql = msConObj.getMysqlCon();
-
+                //  DerbyConnexion msConObj = new DerbyConnexion();
+                //  Connection dbConMysql = msConObj.getMysqlCon();
                // if (dbConMysql == null) {
-               //     JOptionPane.showMessageDialog(null, "Erreur : " + msConObj.erreurConnexion, "Andjety", JOptionPane.WARNING_MESSAGE);
-               //     setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-               // } else {
-                    // Liste des serveurs / Base de données
-                    for (int i = 0; i < dbListe.getDbListe().size(); i++) {
-                        listModelTable2.addElement(dbListe.getDbListe().get(i).getDblist_libelle().toString());
-                    }
+                //     JOptionPane.showMessageDialog(null, "Erreur : " + msConObj.erreurConnexion, "Andjety", JOptionPane.WARNING_MESSAGE);
+                //     setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+                // } else {
+                // Liste des serveurs / Base de données
+                for (int i = 0; i < dbListe.getDbListe().size(); i++) {
+                    listModelTable2.addElement(dbListe.getDbListe().get(i).getDblist_libelle().toString());
+                }
 
-                    jList1.setModel(listModelTable1);
-                    jList2.setModel(listModelTable2);
-                    setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+                jList1.setModel(listModelTable1);
+                jList2.setModel(listModelTable2);
+                setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
                 //}
             }
         });
@@ -275,7 +274,7 @@ public class Assistant2 extends javax.swing.JDialog {
         laNouvelleTache.setTASK_SERVERSLIST(listeOfDBObjectsToAdd);
         // On enregistre la tâche en appellant la fonction de la classe principale
         mf.saveTaskToTasksList(laNouvelleTache);
-        
+
         if (tksPanel != null) {
             tksPanel.LoadData();
             tksPanel.mainFenReloadTasks();
@@ -305,7 +304,7 @@ public class Assistant2 extends javax.swing.JDialog {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         this.hide();
-        Assistant1 assitantFen = new Assistant1(null, rootPaneCheckingEnabled,laNouvelleTache.getTASK_RESULTAT(), taskLibelle, taskSql, dbListe, mf);
+        Assistant1 assitantFen = new Assistant1(null, rootPaneCheckingEnabled, laNouvelleTache.getTASK_RESULTAT(), taskLibelle, taskSql, dbListe, mf);
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
 
         assitantFen.setLocation(
@@ -321,7 +320,7 @@ public class Assistant2 extends javax.swing.JDialog {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        if (jList2.getSelectedValue().toString().length() > 1) {
+        if (jList2.getSelectedValue() != null) {
 
             // Ajout dans l'autre jList
             int[] selectedIx = jList2.getSelectedIndices();
@@ -371,7 +370,6 @@ public class Assistant2 extends javax.swing.JDialog {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
 
                 }
             }

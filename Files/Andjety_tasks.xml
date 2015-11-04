@@ -1,84 +1,51 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<java version="1.6.0_32" class="java.beans.XMLDecoder"> 
- <object class="com.mobissime.andjety.objects.TaskObjListe"> 
-  <void property="dbObjListe"> 
-   <object class="java.util.ArrayList"> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.TaskObj"> 
-      <void property="TASK_LIBELLE"> 
-       <string>tache2</string> 
-      </void> 
-      <void property="TASK_REQUETE"> 
-       <string>Select A.srv_nom&#13;
-       , A.srv_ip&#13;
-       , &apos;ORCL&apos;&#13;
-       , &apos;oracle&apos;&#13;
-       , &apos;oracle&apos;   AS &quot;TUTU&quot;&#13;
-       , &apos;ORACLE&apos;   AS &apos;TITI&apos;&#13;
-       , A.srv_carbase&#13;
-       , B.version AS &quot;TOTO&quot;&#13;
-    From base_srv.serveurs A&#13;
-       , base_srv.versioncarbase B&#13;
-   Where UPPER(A.srv_carbase) like &apos;%3G%&apos;&#13;
-     And B.serveur = A.srv_nom</string> 
-      </void> 
-      <void property="TASK_RESULTAT"> 
-       <string>C:\Users\Paul\Desktop\Test</string> 
-      </void> 
-      <void property="TASK_SERVERSLIST"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.DatabaseObj"> 
-          <void property="dblist_instance"> 
-           <string>test</string> 
-          </void> 
-          <void property="dblist_ip"> 
-           <string>localhost</string> 
-          </void> 
-          <void property="dblist_libelle"> 
-           <string>tutu</string> 
-          </void> 
-          <void property="dblist_password"> 
-           <string>password</string> 
-          </void> 
-          <void property="dblist_sgbd"> 
-           <string>MYSQL</string> 
-          </void> 
-          <void property="dblist_user"> 
-           <string>root</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.DatabaseObj"> 
-          <void property="dblist_instance"> 
-           <string>localhost</string> 
-          </void> 
-          <void property="dblist_ip"> 
-           <string>localhost</string> 
-          </void> 
-          <void property="dblist_libelle"> 
-           <string>localhost</string> 
-          </void> 
-          <void property="dblist_password"> 
-           <string>localhost</string> 
-          </void> 
-          <void property="dblist_sgbd"> 
-           <string>ORACLE</string> 
-          </void> 
-          <void property="dblist_user"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="TASK_TYPE"> 
-       <string>SELECT</string> 
-      </void> 
-     </object> 
-    </void> 
-   </object> 
-  </void> 
- </object> 
-</java> 
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_65" class="java.beans.XMLDecoder">
+ <object class="com.mobissime.andjety.objects.TaskObjListe">
+  <void property="dbObjListe">
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.TaskObj">
+      <void property="TASK_LIBELLE">
+       <string>Test de requete</string>
+      </void>
+      <void property="TASK_REQUETE">
+       <string>SELECT * FROM drupal.node;</string>
+      </void>
+      <void property="TASK_RESULTAT">
+       <string>/home/polo/resultat</string>
+      </void>
+      <void property="TASK_SERVERSLIST">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.DatabaseObj">
+          <void property="dblist_instance">
+           <string>drupal</string>
+          </void>
+          <void property="dblist_ip">
+           <string>web.mobissime.com</string>
+          </void>
+          <void property="dblist_libelle">
+           <string>web.mobissime.com</string>
+          </void>
+          <void property="dblist_password">
+           <string>Emmeline021287</string>
+          </void>
+          <void property="dblist_sgbd">
+           <string>MYSQL</string>
+          </void>
+          <void property="dblist_user">
+           <string>root</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="TASK_TYPE">
+       <string>SELECT</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

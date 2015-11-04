@@ -63,7 +63,7 @@
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/ressources/gnome_folder_drag_accept.png"/>
+              <Image iconType="3" name="/ressources/gnome_media_floppy.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Ouvrir dans Excel"/>
             <Property name="focusable" type="boolean" value="false"/>

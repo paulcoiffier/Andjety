@@ -53,6 +53,7 @@ import org.quartz.Scheduler;
 
 /**
  * Andjety Main Window
+ *
  * @author {@value com.mobissime.andjety.Constants#appAuthor}
  * @version {@value com.mobissime.andjety.Constants#appVersion}
  */
@@ -363,19 +364,46 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     }
 
     private void lanceGestBaseDeDonnees() {
-        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+    
+        boolean trouve = false;
+        for (int i = 0; i < jTabbedPane1.getTabCount(); i++) {
+            if (jTabbedPane1.getComponentAt(i).getClass().toString().equals("class com.mobissime.andjety.windows.DatabasesPanel")) {
+                jTabbedPane1.setSelectedIndex(i);
+                trouve = true;
+                break;
+            }
+        }
+
+        if (!trouve) {
+             setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         DatabasesPanel dbPane = new DatabasesPanel(this, dbListObj);
         jTabbedPane1.add(properties.getProperty("manageDBTitle"), dbPane);
         jTabbedPane1.setSelectedComponent(dbPane);
         initTabComponent(jTabbedPane1.getSelectedIndex());
+        }
+        
+       
     }
 
     private void lanceGestionTaches() {
-        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-        TasksPanel dbPane = new TasksPanel(this, taskListObj);
-        jTabbedPane1.add(properties.getProperty("manageTasks"), dbPane);
-        jTabbedPane1.setSelectedComponent(dbPane);
-        initTabComponent(jTabbedPane1.getSelectedIndex());
+
+        boolean trouve = false;
+        for (int i = 0; i < jTabbedPane1.getTabCount(); i++) {
+            if (jTabbedPane1.getComponentAt(i).getClass().toString().equals("class com.mobissime.andjety.windows.TasksPanel")) {
+                jTabbedPane1.setSelectedIndex(i);
+                trouve = true;
+                break;
+            }
+        }
+
+        if (!trouve) {
+            setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            TasksPanel dbPane = new TasksPanel(this, taskListObj);
+            jTabbedPane1.add(properties.getProperty("manageTasks"), dbPane);
+            jTabbedPane1.setSelectedComponent(dbPane);
+            initTabComponent(jTabbedPane1.getSelectedIndex());
+        }
+
     }
 
     private void lanceEditeurSQL() {

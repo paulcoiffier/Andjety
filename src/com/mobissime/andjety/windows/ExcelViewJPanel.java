@@ -173,7 +173,7 @@ public class ExcelViewJPanel extends javax.swing.JPanel {
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/gnome_folder_drag_accept.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/gnome_media_floppy.png"))); // NOI18N
         jButton2.setToolTipText("Ouvrir dans Excel");
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
