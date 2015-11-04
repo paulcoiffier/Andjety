@@ -4,13 +4,12 @@
  */
 package com.mobissime.andjety.utils;
 
+import com.mobissime.andjety.Constants;
 import com.mobissime.andjety.MainFen;
 import java.awt.TrayIcon;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,110 +28,117 @@ public class FIndMajEngine implements Runnable {
         InputStream ins = null;
 
         try {
-            URL url = new URL("http://www.saphirsoftware.com/andjety_version.txt");
+            URL url = new URL("http://web.mobissime.com/andjety_version.txt");
             ins = url.openStream();
 
             InputStreamReader is = new InputStreamReader(ins);
             BufferedReader br = new BufferedReader(is);
             final String read = br.readLine();
-
-            if (!appVersion.equals(read.toString())) {
-
-                mf.jProgressBarUpdateObjet.setVisible(true);
-                //System.out.println("Version différente");
-                appVersion = read.toString();
-                // Réponse = OUI
-                // Spécifier le chemin exact vers le fichier
-                String fileNameToDownload = null;
-
-                if (OSValidator.isWindows()) {
-                    fileNameToDownload = "http://www.saphirsoftware.com/softs/Andjety" + read.toString().replace(".", "") + ".exe";
-                } else if (OSValidator.isUnix()) {
-                    fileNameToDownload = "http://www.saphirsoftware.com/softs/Andjety" + read.toString().replace(".", "") + ".deb";
-                }
-                System.out.println("File to Download : " + fileNameToDownload);
-                URL u = new URL(fileNameToDownload);
-                URLConnection uc = u.openConnection();
-                final int taille = uc.getContentLength();
-                InputStream brut = uc.getInputStream();
-                InputStream entree = new BufferedInputStream(brut);
-                byte[] donnees = new byte[taille];
-                int octetsLus = 0;
-                int deplacement = 0;
-                float alreadyRead = 0;
-                // Boucle permettant de parcourir tous les octets du fichier à lire
+             
+            System.out.println("Read version : " + read.toString());
+            System.out.println("Constant version : " + Constants.appVersion);
+            
+            if (!Constants.appVersion.equals(read.toString())) {
 
                 java.awt.EventQueue.invokeLater(new Runnable() {
 
                     @Override
                     public void run() {
-                        mf.jProgressBarUpdateObjet.setMaximum(taille);
-                        mf.jProgressBarUpdateObjet.setVisible(true);
-                        //mf.jProgressBarUpdateObjet.setString("Télechargement de la mise à jour en cours...");
-                        mf.trayIcon.displayMessage("Andjety", "Téléchargement de la mise à jour " + read.toString() + " en cours...", TrayIcon.MessageType.INFO);
-                        mf.setStatusMessage("Téléchargement : ");
+                        JOptionPane.showMessageDialog(mf, "Une nouvelle version de Andjety est disponible. Veuillez vous rendre à l'adresse https://github.com/paulcoiffier/Andjety/ pour la télécharger", "Andjety", JOptionPane.INFORMATION_MESSAGE);
+
                     }
                 });
+                /*mf.jProgressBarUpdateObjet.setVisible(true);
+                 appVersion = read.toString();
+                 String fileNameToDownload = null;
 
-                while (deplacement < taille) {
+                 if (OSValidator.isWindows()) {
+                 fileNameToDownload = "http://www.saphirsoftware.com/softs/Andjety" + read.toString().replace(".", "") + ".exe";
+                 } else if (OSValidator.isUnix()) {
+                 fileNameToDownload = "http://www.saphirsoftware.com/softs/Andjety" + read.toString().replace(".", "") + ".deb";
+                 }
 
-                    final int deplacementBis = deplacement;
-                    java.awt.EventQueue.invokeLater(new Runnable() {
+                 System.out.println("File to Download : " + fileNameToDownload);
 
-                        @Override
-                        public void run() {
-                            mf.jProgressBarUpdateObjet.setValue(deplacementBis);
-                        }
-                    });
+                 URL u = new URL(fileNameToDownload);
+                 URLConnection uc = u.openConnection();
+                 final int taille = uc.getContentLength();
+                 InputStream brut = uc.getInputStream();
+                 InputStream entree = new BufferedInputStream(brut);
+                 byte[] donnees = new byte[taille];
+                 int octetsLus = 0;
+                 int deplacement = 0;
+                 float alreadyRead = 0;
+                 // Boucle permettant de parcourir tous les octets du fichier à lire
 
+                 java.awt.EventQueue.invokeLater(new Runnable() {
 
-                    //System.out.println("Downloading..." + deplacement + "/" + taille);
-                    // utilisation de la methode "read" de la classe InputStream
-                    octetsLus = entree.read(donnees, deplacement, donnees.length - deplacement);
+                 @Override
+                 public void run() {
+                 mf.jProgressBarUpdateObjet.setMaximum(taille);
+                 mf.jProgressBarUpdateObjet.setVisible(true);
+                 mf.trayIcon.displayMessage("Andjety", "Téléchargement de la mise à jour " + read.toString() + " en cours...", TrayIcon.MessageType.INFO);
+                 mf.setStatusMessage("Téléchargement : ");
+                 }
+                 });
 
-                    // Petit calcul: mise à jour du nombre total d’octets lus par ajout au nombre d’octets lus au cours des précédents passages au nombre d’octets lus pendant ce passage
-                    alreadyRead = alreadyRead + octetsLus;
+                 while (deplacement < taille) {
 
-                    // -1 marque par convention la fin d’un fichier, double opérateur "égale": = =
-                    if (octetsLus == -1) {
-                        break;
-                    }
+                 final int deplacementBis = deplacement;
+                 java.awt.EventQueue.invokeLater(new Runnable() {
 
-                    // se cadrer à un endroit précis du fichier pour lire les octets suivants, c’est le déplacement
-                    deplacement += octetsLus;
+                 @Override
+                 public void run() {
+                 mf.jProgressBarUpdateObjet.setValue(deplacementBis);
+                 }
+                 });
 
-                }
+                 //System.out.println("Downloading..." + deplacement + "/" + taille);
+                 // utilisation de la methode "read" de la classe InputStream
+                 octetsLus = entree.read(donnees, deplacement, donnees.length - deplacement);
 
-                final int deplacementBis = deplacement;
-                java.awt.EventQueue.invokeLater(new Runnable() {
+                 // Petit calcul: mise à jour du nombre total d’octets lus par ajout au nombre d’octets lus au cours des précédents passages au nombre d’octets lus pendant ce passage
+                 alreadyRead = alreadyRead + octetsLus;
 
-                    @Override
-                    public void run() {
-                        mf.jProgressBarUpdateObjet.setValue(deplacementBis + 1);
-                    }
-                });
+                 // -1 marque par convention la fin d’un fichier, double opérateur "égale": = =
+                 if (octetsLus == -1) {
+                 break;
+                 }
 
-                // fermer le flux d’entrée.
-                entree.close();
+                 // se cadrer à un endroit précis du fichier pour lire les octets suivants, c’est le déplacement
+                 deplacement += octetsLus;
 
-                // Récupérer le nom du fichier
-                String fichier = u.getFile();
-                fichier = fichier.substring(fichier.lastIndexOf(
-                        '/') + 1);
+                 }
 
-                // Créer un fichier sur le DD afin d’y copier le contenu du fichier téléchargé (par un flux de sortie).
-                FileOutputStream fichierSortie = new FileOutputStream(System.getProperty("user.dir") + "/tmp/Andjety_setup.exe");
+                 final int deplacementBis = deplacement;
+                 java.awt.EventQueue.invokeLater(new Runnable() {
 
-                // copier…
-                fichierSortie.write(donnees);
+                 @Override
+                 public void run() {
+                 mf.jProgressBarUpdateObjet.setValue(deplacementBis + 1);
+                 }
+                 });
 
-                // vider puis fermer le flux de sortie
-                fichierSortie.flush();
-                fichierSortie.close();
+                 // fermer le flux d’entrée.
+                 entree.close();
 
-                mf.checkUpdateFinish(appVersion, System.getProperty("user.dir") + "/tmp/Andjety_setup.exe");
+                 // Récupérer le nom du fichier
+                 String fichier = u.getFile();
+                 fichier = fichier.substring(fichier.lastIndexOf(
+                 '/') + 1);
 
+                 // Créer un fichier sur le DD afin d’y copier le contenu du fichier téléchargé (par un flux de sortie).
+                 FileOutputStream fichierSortie = new FileOutputStream(System.getProperty("user.dir") + "/tmp/Andjety_setup.exe");
 
+                 // copier…
+                 fichierSortie.write(donnees);
+
+                 // vider puis fermer le flux de sortie
+                 fichierSortie.flush();
+                 fichierSortie.close();
+
+                 mf.checkUpdateFinish(appVersion, System.getProperty("user.dir") + "/tmp/Andjety_setup.exe");
+                 */
             } else {
                 mf.setStatusMessage("Andjety est à jour");
                 System.out.println("Version identique");
