@@ -1,5 +1,5 @@
 /*
- * Andjety 3.0 - Code by Paul Coiffier - 2012 - 2015
+ * Andjety 3.0 - Paul Coiffier - 2012 - 2015
  * 
  */
 package com.mobissime.andjety;

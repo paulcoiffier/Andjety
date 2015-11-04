@@ -1,3 +1,7 @@
+/*
+ * Andjety 3.0 - Paul Coiffier - 2012 - 2015
+ * 
+ */
 package com.mobissime.andjety.objects;
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Andjety 3.0 - Paul Coiffier - 2012 - 2015
+ * 
  */
 package com.mobissime.andjety.utils;
 
