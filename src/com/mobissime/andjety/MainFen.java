@@ -52,8 +52,9 @@ import org.openide.util.Exceptions;
 import org.quartz.Scheduler;
 
 /**
- *
- * @author Paul
+ * Andjety Main Window
+ * @author {@value com.mobissime.andjety.Constants#appAuthor}
+ * @version {@value com.mobissime.andjety.Constants#appVersion}
  */
 public class MainFen extends javax.swing.JFrame implements MainFenObservable {
 

@@ -10,12 +10,14 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 /**
- *
- * @author Paul Coiffier
+ * Application initialisation 
+ * @author {@value com.mobissime.andjety.Constants#appAuthor}
+ * @version {@value com.mobissime.andjety.Constants#appVersion}
  */
 public class Andjety {
 
     /**
+     * Main function to start the application
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -31,13 +33,7 @@ public class Andjety {
                 try {
                     UIManager.setLookAndFeel("org.pushingpixels.substance.api.skin.Substance" + optionsParse.skinName);
 
-                } catch (ClassNotFoundException e) {
-                    System.out.println("Impossible de définir le Look : " + e.getMessage().toString());
-                } catch (InstantiationException e) {
-                    System.out.println("Impossible de définir le Look : " + e.getMessage().toString());
-                } catch (IllegalAccessException e) {
-                    System.out.println("Impossible de définir le Look : " + e.getMessage().toString());
-                } catch (UnsupportedLookAndFeelException e) {
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
                     System.out.println("Impossible de définir le Look : " + e.getMessage().toString());
                 }
 
@@ -47,7 +43,10 @@ public class Andjety {
         });
     }
 
-    static void exit() {
+    /**
+     * Exit the application
+     */
+    public static void exit() {
         System.exit(0);
     }
 }
