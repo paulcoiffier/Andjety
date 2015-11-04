@@ -364,7 +364,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     }
 
     private void lanceGestBaseDeDonnees() {
-    
+
         boolean trouve = false;
         for (int i = 0; i < jTabbedPane1.getTabCount(); i++) {
             if (jTabbedPane1.getComponentAt(i).getClass().toString().equals("class com.mobissime.andjety.windows.DatabasesPanel")) {
@@ -375,14 +375,13 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         }
 
         if (!trouve) {
-             setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-        DatabasesPanel dbPane = new DatabasesPanel(this, dbListObj);
-        jTabbedPane1.add(properties.getProperty("manageDBTitle"), dbPane);
-        jTabbedPane1.setSelectedComponent(dbPane);
-        initTabComponent(jTabbedPane1.getSelectedIndex());
+            setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            DatabasesPanel dbPane = new DatabasesPanel(this, dbListObj);
+            jTabbedPane1.add(properties.getProperty("manageDBTitle"), dbPane);
+            jTabbedPane1.setSelectedComponent(dbPane);
+            initTabComponent(jTabbedPane1.getSelectedIndex());
         }
-        
-       
+
     }
 
     private void lanceGestionTaches() {
@@ -485,7 +484,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         jXLabelStatusBar = new org.jdesktop.swingx.JXLabel();
         jProgressBarUpdate = new javax.swing.JProgressBar();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jMenuFile = new javax.swing.JMenu();
         jMenuAssistant = new javax.swing.JMenuItem();
         jSeparator10 = new javax.swing.JPopupMenu.Separator();
         jMenuItemEditeurSQL = new javax.swing.JMenuItem();
@@ -493,14 +492,14 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         jMenuItem5 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuQuitter = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        jMenuEdit = new javax.swing.JMenu();
+        jMenuItemOptions = new javax.swing.JMenuItem();
+        jMenuTools = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jSeparator11 = new javax.swing.JPopupMenu.Separator();
-        jMenuItemOptions = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        jMenuHelp = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jSeparator7 = new javax.swing.JPopupMenu.Separator();
+        jSeparator11 = new javax.swing.JPopupMenu.Separator();
         jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -756,7 +755,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         jProgressBarUpdate.setStringPainted(true);
         jXStatusBar1.add(jProgressBarUpdate);
 
-        jMenu1.setText("Fichier");
+        jMenuFile.setText("Fichier");
 
         jMenuAssistant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/gnome_document_new_small.png"))); // NOI18N
         jMenuAssistant.setText("Nouvelle tâche");
@@ -765,8 +764,8 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                 jMenuAssistantActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuAssistant);
-        jMenu1.add(jSeparator10);
+        jMenuFile.add(jMenuAssistant);
+        jMenuFile.add(jSeparator10);
 
         jMenuItemEditeurSQL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Data_SQL_1_small.png"))); // NOI18N
         jMenuItemEditeurSQL.setText("Editeur SQL");
@@ -775,8 +774,8 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                 jMenuItemEditeurSQLActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItemEditeurSQL);
-        jMenu1.add(jSeparator5);
+        jMenuFile.add(jMenuItemEditeurSQL);
+        jMenuFile.add(jSeparator5);
 
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/gnome_document_open_recent_small.png"))); // NOI18N
         jMenuItem5.setText("Tâches planifiées");
@@ -785,8 +784,8 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                 jMenuItem5ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem5);
-        jMenu1.add(jSeparator1);
+        jMenuFile.add(jMenuItem5);
+        jMenuFile.add(jSeparator1);
 
         jMenuQuitter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/door_out.png"))); // NOI18N
         jMenuQuitter.setText("Quitter");
@@ -795,28 +794,11 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                 jMenuQuitterActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuQuitter);
+        jMenuFile.add(jMenuQuitter);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenuFile);
 
-        jMenu2.setText("Edition");
-
-        jMenuItem1.setText("Purger historique des tâches");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem1);
-
-        jMenuItem2.setText("Supprimer les bases de données");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem2);
-        jMenu2.add(jSeparator11);
+        jMenuEdit.setText("Edition");
 
         jMenuItemOptions.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/gnome_preferences_other_small.png"))); // NOI18N
         jMenuItemOptions.setText("Options");
@@ -825,11 +807,31 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                 jMenuItemOptionsActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItemOptions);
+        jMenuEdit.add(jMenuItemOptions);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jMenuEdit);
 
-        jMenu3.setText("Aide");
+        jMenuTools.setText("Outils");
+
+        jMenuItem1.setText("Purger historique des tâches");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenuTools.add(jMenuItem1);
+
+        jMenuItem2.setText("Supprimer les bases de données");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenuTools.add(jMenuItem2);
+
+        jMenuBar1.add(jMenuTools);
+
+        jMenuHelp.setText("Aide");
 
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/gnome_system_software_update_small.png"))); // NOI18N
         jMenuItem6.setText("Mises à jour");
@@ -838,8 +840,8 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                 jMenuItem6ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem6);
-        jMenu3.add(jSeparator7);
+        jMenuHelp.add(jMenuItem6);
+        jMenuHelp.add(jSeparator11);
 
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/Andjety_minismall.png"))); // NOI18N
         jMenuItem3.setText("A Propos de Andjety");
@@ -848,9 +850,9 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem3);
+        jMenuHelp.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(jMenuHelp);
 
         setJMenuBar(jMenuBar1);
 
@@ -1480,11 +1482,11 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     private javax.swing.JButton jButtonHelpButton;
     private javax.swing.JButton jButtonToolbarQuitter;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuItem jMenuAssistant;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuEdit;
+    private javax.swing.JMenu jMenuFile;
+    private javax.swing.JMenu jMenuHelp;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
@@ -1493,6 +1495,7 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     private javax.swing.JMenuItem jMenuItemEditeurSQL;
     private javax.swing.JMenuItem jMenuItemOptions;
     private javax.swing.JMenuItem jMenuQuitter;
+    private javax.swing.JMenu jMenuTools;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JProgressBar jProgressBarUpdate;
@@ -1505,7 +1508,6 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JToolBar.Separator jSeparator6;
-    private javax.swing.JPopupMenu.Separator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JToolBar.Separator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
@@ -1622,14 +1624,14 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
 
         if (languageValue.toUpperCase().equals("ENGLISH")) {
             stream = Thread.currentThread().getContextClassLoader().getResourceAsStream("languages/english.properties");
-            jMenu1.setText("File");
+            jMenuFile.setText("File");
             jMenuAssistant.setText("New Task");
             jMenuItemEditeurSQL.setText("SQL Editor");
             jMenuItem5.setText("Schedule Tasks");
             jMenuQuitter.setText("Exit");
-            jMenu2.setText("Edit");
+            jMenuEdit.setText("Edit");
             jMenuItemOptions.setText("Settings");
-            jMenu3.setText("Help");
+            jMenuHelp.setText("Help");
             jMenuItem3.setText("About Andjety");
             jMenuItem6.setText("Check Updates");
             jXTaskPane1.setTitle("Tasks");
