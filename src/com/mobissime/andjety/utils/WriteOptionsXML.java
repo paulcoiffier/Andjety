@@ -32,39 +32,25 @@ public class WriteOptionsXML {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
-            // root elements
             Document doc = docBuilder.newDocument();
             Element rootElement = doc.createElement("options");
             doc.appendChild(rootElement);
 
-            // staff elements
             Element staff = doc.createElement("database");
             rootElement.appendChild(staff);
 
-            // set attribute to staff element
-		/*Attr attr = doc.createAttribute("id");
-             attr.setValue("1");
-             staff.setAttributeNode(attr);*/
-
-            // shorten way
-            // staff.setAttribute("id", "1");
-
-            // firstname elements
             Element firstname = doc.createElement("serveur");
             firstname.appendChild(doc.createTextNode(serveur));
             staff.appendChild(firstname);
 
-            // lastname elements
             Element lastname = doc.createElement("user");
             lastname.appendChild(doc.createTextNode(user));
             staff.appendChild(lastname);
 
-            // nickname elements
             Element nickname = doc.createElement("password");
             nickname.appendChild(doc.createTextNode(password));
             staff.appendChild(nickname);
 
-            // nickname elements
             Element skin = doc.createElement("skinName");
             skin.appendChild(doc.createTextNode(SkinName));
             staff.appendChild(skin);
@@ -81,7 +67,6 @@ public class WriteOptionsXML {
             languageOption.appendChild(doc.createTextNode(language));
             staff.appendChild(languageOption);
 
-            // write the content into xml file
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
@@ -98,19 +83,12 @@ public class WriteOptionsXML {
 
             
             File file = new File(path + "/Files/options.xml");
-
             StreamResult result = new StreamResult(file);
-
-            // Output to console for testing
-            // StreamResult result = new StreamResult(System.out);
-
             transformer.transform(source, result);
 
 
-        } catch (ParserConfigurationException pce) {
+        } catch (ParserConfigurationException | TransformerException pce) {
             pce.printStackTrace();
-        } catch (TransformerException tfe) {
-            tfe.printStackTrace();
         }
     }
 }
