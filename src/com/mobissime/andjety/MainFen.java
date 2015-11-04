@@ -1212,11 +1212,12 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         try {
             // Sérialisation des tables & attributs du projet
             String pathOfProject = System.getProperty("user.dir");
-            if (OSValidator.isUnix()) {
-                XMLTools.encodeToFile(taskListObj, "/usr/lib/Files/Andjety_tasks.xml");
-            } else {
-                XMLTools.encodeToFile(taskListObj, pathOfProject + "/Files/Andjety_tasks.xml");
-            }
+            /*if (OSValidator.isUnix()) {
+             XMLTools.encodeToFile(taskListObj, "/usr/lib/Files/Andjety_tasks.xml");
+             } else {
+             XMLTools.encodeToFile(taskListObj, pathOfProject + "/Files/Andjety_tasks.xml");
+             }*/
+            XMLTools.encodeToFile(taskListObj, pathOfProject + "/Files/Andjety_tasks.xml");
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null, ex);
