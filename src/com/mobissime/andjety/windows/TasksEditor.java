@@ -193,8 +193,7 @@ public class TasksEditor extends javax.swing.JDialog {
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/mobissime/andjety/windows/Bundle"); // NOI18N
         jTextField1.setText(bundle.getString("Assistant1.jTextField1.text")); // NOI18N
 
-        java.util.ResourceBundle bundle1 = java.util.ResourceBundle.getBundle("assistant/Bundle"); // NOI18N
-        jLabel3.setText(bundle1.getString("Assistant1.jLabel3.text")); // NOI18N
+        jLabel3.setText(bundle.getString("Assistant1.jLabel3.text")); // NOI18N
 
         jLabel4.setText(bundle.getString("Assistant1.jLabel4.text")); // NOI18N
 
@@ -257,7 +256,7 @@ public class TasksEditor extends javax.swing.JDialog {
             }
         });
 
-        jLabel7.setText(bundle1.getString("Assistant1.jLabel3.text")); // NOI18N
+        jLabel7.setText(bundle.getString("Assistant1.jLabel3.text")); // NOI18N
         jLabel7.setToolTipText("");
 
         jTextFieldResultat.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
@@ -273,7 +272,7 @@ public class TasksEditor extends javax.swing.JDialog {
 
         buttonGroup1.add(jRadioButtonSelect);
         jRadioButtonSelect.setSelected(true);
-        jRadioButtonSelect.setText(bundle1.getString("com.mobissime.andjety.windows.Bundle")); // NOI18N
+        jRadioButtonSelect.setText(bundle.getString("com.mobissime.andjety.windows.Bundle")); // NOI18N
 
         buttonGroup1.add(jRadioButtonInsert2);
         jRadioButtonInsert2.setText(bundle.getString("Assistant1.jRadioButtonInsert.text")); // NOI18N
