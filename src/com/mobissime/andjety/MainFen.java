@@ -345,10 +345,23 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     }
 
     private void affichePanelAccueil() {
-        AccueilPanel assitantFen = new AccueilPanel(this, taskExecListObj);
-        jTabbedPane1.add(properties.getProperty("welcomeTitle"), assitantFen);
-        jTabbedPane1.setSelectedComponent(assitantFen);
-        initTabComponent(jTabbedPane1.getSelectedIndex());
+
+        boolean trouve = false;
+        for (int i = 0; i < jTabbedPane1.getTabCount(); i++) {
+            if (jTabbedPane1.getComponentAt(i).getClass().toString().equals("class com.mobissime.andjety.windows.AccueilPanel")) {
+                jTabbedPane1.setSelectedIndex(i);
+                trouve = true;
+                break;
+            }
+        }
+
+        if (!trouve) {
+            AccueilPanel assitantFen = new AccueilPanel(this, taskExecListObj);
+            jTabbedPane1.add(properties.getProperty("welcomeTitle"), assitantFen);
+            jTabbedPane1.setSelectedComponent(assitantFen);
+            initTabComponent(jTabbedPane1.getSelectedIndex());
+        }
+
     }
 
     private void lanceAssitant() {
@@ -1226,11 +1239,12 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         try {
             // Sérialisation des tables & attributs du projet
             String pathOfProject = System.getProperty("user.dir");
-            if (OSValidator.isUnix()) {
-                XMLTools.encodeToFile(taskExecListObj, "/usr/lib/Files/Andjety_tasksexec.xml");
-            } else {
-                XMLTools.encodeToFile(taskExecListObj, pathOfProject + "/Files/Andjety_tasksexec.xml");
-            }
+            /*if (OSValidator.isUnix()) {
+             XMLTools.encodeToFile(taskExecListObj, "/usr/lib/Files/Andjety_tasksexec.xml");
+             } else {
+             XMLTools.encodeToFile(taskExecListObj, pathOfProject + "/Files/Andjety_tasksexec.xml");
+             }*/
+            XMLTools.encodeToFile(taskExecListObj, pathOfProject + "/Files/Andjety_tasksexec.xml");
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null, ex);
@@ -1279,11 +1293,12 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         try {
             // Sérialisation des tables & attributs du projet
             String pathOfProject = System.getProperty("user.dir");
-            if (OSValidator.isUnix()) {
-                XMLTools.encodeToFile(listOfLogs, "/usr/lib/Andjety/Files/Andjety_tasks_logs.xml");
-            } else {
-                XMLTools.encodeToFile(listOfLogs, pathOfProject + "/Files/Andjety_tasks_logs.xml");
-            }
+            /*if (OSValidator.isUnix()) {
+             XMLTools.encodeToFile(listOfLogs, "/usr/lib/Andjety/Files/Andjety_tasks_logs.xml");
+             } else {
+             XMLTools.encodeToFile(listOfLogs, pathOfProject + "/Files/Andjety_tasks_logs.xml");
+             }*/
+            XMLTools.encodeToFile(listOfLogs, pathOfProject + "/Files/Andjety_tasks_logs.xml");
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null, ex);
@@ -1393,10 +1408,9 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        //Custom button text
         Object[] options = {properties.getProperty("yesButton"),
             properties.getProperty("noButton")};
-        int response = JOptionPane.showOptionDialog(null, "Purger l'historique des tâches ?",
+        int response = JOptionPane.showOptionDialog(this, properties.getProperty("question_clear_tasks_history"),
                 "Andjety",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE,

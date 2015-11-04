@@ -1,22 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<java version="1.6.0_32" class="java.beans.XMLDecoder"> 
- <object class="com.mobissime.andjety.objects.TaskExecListe"> 
-  <void property="listOfTasksExec"> 
-   <object class="java.util.ArrayList"> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.TasksexecObj"> 
-      <void property="dateheure"> 
-       <string>10022013-12-30-07</string> 
-      </void> 
-      <void property="libelleTask"> 
-       <string>tache2</string> 
-      </void> 
-      <void property="resultat"> 
-       <string>C:\Users\Paul\Desktop\Test\resultat_10022013-12-30-04.xls</string> 
-      </void> 
-     </object> 
-    </void> 
-   </object> 
-  </void> 
- </object> 
-</java> 
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_65" class="java.beans.XMLDecoder">
+ <object class="com.mobissime.andjety.objects.TaskExecListe">
+  <void property="listOfTasksExec">
+   <object class="java.util.ArrayList"/>
+  </void>
+ </object>
+</java>

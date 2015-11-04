@@ -63,7 +63,7 @@ public class AccueilPanel extends javax.swing.JPanel {
                         File f = new File(jXTable1.getValueAt(row, 2).toString());
                         Desktop.getDesktop().open(f);
                     } catch (Exception ex) {
-                        JOptionPane.showMessageDialog(null, "Erreur : " + ex.getMessage().toString(), "Andjety", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(AccueilPanel.this, "Erreur : " + ex.getMessage().toString(), "Andjety", JOptionPane.ERROR_MESSAGE);
                     }
 
                 }

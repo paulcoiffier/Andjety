@@ -1,1314 +1,1414 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<java version="1.6.0_32" class="java.beans.XMLDecoder"> 
- <object class="com.mobissime.andjety.objects.LogObjArrayObj"> 
-  <void property="listOfLogsOb"> 
-   <object class="java.util.ArrayList"> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date0" class="java.util.Date"> 
-            <long>1360447670622</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:07:50</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:07:53</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date0"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:07:53</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:07:56</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date0"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:07:50</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:07:56</string> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date1" class="java.util.Date"> 
-            <long>1360447910589</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:11:50</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:11:53</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date1"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:11:53</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:11:56</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date1"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:11:50</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:11:56</string> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date2" class="java.util.Date"> 
-            <long>1360447952956</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:12:32</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:12:36</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date2"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:12:36</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:12:39</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date2"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:12:32</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:12:39</string> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date3" class="java.util.Date"> 
-            <long>1360448719790</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:25:19</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:25:22</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date3"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:25:22</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:25:26</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>6s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date3"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:25:19</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:25:26</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date4" class="java.util.Date"> 
-            <long>1360448750350</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:25:50</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:25:53</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date4"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:25:53</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:25:56</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>6s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date4"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:25:50</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:25:56</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date5" class="java.util.Date"> 
-            <long>1360448797667</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:26:37</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:26:40</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date5"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:26:40</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:26:43</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>6s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date5"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:26:37</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:26:43</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date6" class="java.util.Date"> 
-            <long>1360448843099</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:27:23</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:27:26</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date6"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:27:26</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:27:29</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>6s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date6"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:27:23</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:27:29</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date7" class="java.util.Date"> 
-            <long>1360448897766</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:28:17</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:28:20</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date7"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:28:20</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:28:23</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Erreur</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>6s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date7"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:28:17</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:28:23</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date8" class="java.util.Date"> 
-            <long>1360449571398</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:39:31</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:39:34</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_65" class="java.beans.XMLDecoder">
+ <object class="com.mobissime.andjety.objects.LogObjArrayObj">
+  <void property="listOfLogsOb">
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date0">
+            <long>1360447670622</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:07:50</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:07:53</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date0"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:07:53</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:07:56</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date0"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:07:50</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:07:56</string>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date1">
+            <long>1360447910589</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:11:50</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:11:53</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date1"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:11:53</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:11:56</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date1"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:11:50</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:11:56</string>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date2">
+            <long>1360447952956</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:12:32</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:12:36</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date2"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:12:36</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:12:39</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date2"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:12:32</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:12:39</string>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date3">
+            <long>1360448719790</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:25:19</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:25:22</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date3"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:25:22</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:25:26</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>6s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date3"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:25:19</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:25:26</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date4">
+            <long>1360448750350</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:25:50</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:25:53</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date4"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:25:53</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:25:56</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>6s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date4"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:25:50</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:25:56</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date5">
+            <long>1360448797667</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:26:37</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:26:40</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date5"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:26:40</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:26:43</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>6s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date5"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:26:37</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:26:43</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date6">
+            <long>1360448843099</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:27:23</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:27:26</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date6"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:27:26</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:27:29</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>6s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date6"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:27:23</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:27:29</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date7">
+            <long>1360448897766</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:28:17</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:28:20</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date7"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:28:20</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:28:23</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Erreur</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>6s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date7"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:28:17</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:28:23</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date8">
+            <long>1360449571398</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:39:31</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:39:34</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date8"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:39:34</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:39:37</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date8"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:39:34</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:39:37</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>6s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date8"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:39:31</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:39:37</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date9" class="java.util.Date"> 
-            <long>1360449598150</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:39:58</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:40:01</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>6s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date8"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:39:31</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:39:37</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date9">
+            <long>1360449598150</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:39:58</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:40:01</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date9"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:40:01</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:40:04</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date9"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:40:01</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:40:04</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>6s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date9"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:39:58</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:40:04</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date10" class="java.util.Date"> 
-            <long>1360449666582</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:41:06</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:41:09</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>6s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date9"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:39:58</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:40:04</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date10">
+            <long>1360449666582</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:41:06</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:41:09</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date10"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:41:09</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:41:12</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date10"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:41:09</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:41:12</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>tutu</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>6s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date10"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:41:06</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:41:12</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date11" class="java.util.Date"> 
-            <long>1360449897432</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:44:57</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:45:00</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>tutu</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>6s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date10"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:41:06</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:41:12</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date11">
+            <long>1360449897432</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:44:57</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:45:00</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date11"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:45:00</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:45:03</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date11"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:45:00</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:45:03</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>tutu</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>6s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date11"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:44:57</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:45:03</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date12" class="java.util.Date"> 
-            <long>1360449948133</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:45:48</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:45:51</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>tutu</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>6s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date11"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:44:57</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:45:03</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date12">
+            <long>1360449948133</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:45:48</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:45:51</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date12"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:45:51</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:45:54</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date12"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:45:51</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:45:54</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>tutu</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>6s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date12"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:45:48</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:45:54</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date13" class="java.util.Date"> 
-            <long>1360450044902</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:47:24</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:47:28</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>tutu</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>6s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date12"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:45:48</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:45:54</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date13">
+            <long>1360450044902</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:47:24</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:47:28</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date13"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:47:28</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:47:31</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date13"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:47:28</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:47:31</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>tutu</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>6s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date13"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:47:24</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:47:31</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date14" class="java.util.Date"> 
-            <long>1360450134234</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:48:54</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:48:57</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>tutu</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>6s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date13"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:47:24</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:47:31</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date14">
+            <long>1360450134234</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:48:54</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:48:57</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date14"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:48:57</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:49:00</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date14"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:48:57</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:49:00</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>tutu</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>6s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date14"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:48:54</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:49:00</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date15" class="java.util.Date"> 
-            <long>1360450136513</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:48:56</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:48:59</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>tutu</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>6s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date14"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:48:54</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:49:00</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date15">
+            <long>1360450136513</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:48:56</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:48:59</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date15"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>09/02/13 23:48:59</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>09/02/13 23:49:02</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date15"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>09/02/13 23:48:59</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>09/02/13 23:49:02</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>tutu</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>6s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date15"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>09/02/13 23:48:56</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>09/02/13 23:49:02</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date16" class="java.util.Date"> 
-            <long>1360452604631</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>10/02/13 0:30:04</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>10/02/13 0:30:06</string> 
-          </void> 
-          <void property="logobj_resultat"> 
-           <string>Ok</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>tutu</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date16"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>10/02/13 0:30:06</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>10/02/13 0:30:07</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>tutu</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>6s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date15"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>09/02/13 23:48:56</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>09/02/13 23:49:02</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date16">
+            <long>1360452604631</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>10/02/13 0:30:04</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>10/02/13 0:30:06</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Ok</string>
+          </void>
+          <void property="logobjd_database">
+           <string>tutu</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date16"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>10/02/13 0:30:06</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>10/02/13 0:30:07</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Listener refused the connection with the following error:
 ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
 The Connection descriptor used by the client was:
 localhost:1521:localhost
-</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>2s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date16"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>10/02/13 0:30:04</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>10/02/13 0:30:07</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>1</int> 
-      </void> 
-      <void property="logobj_nbServeursOk"> 
-       <int>1</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date17" class="java.util.Date"> 
-            <long>1362003098570</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>27/02/13 23:11:38</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>27/02/13 23:11:41</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>2s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date16"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>10/02/13 0:30:04</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>10/02/13 0:30:07</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>1</int>
+      </void>
+      <void property="logobj_nbServeursOk">
+       <int>1</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date17">
+            <long>1362003098570</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>27/02/13 23:11:38</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>27/02/13 23:11:41</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>tutu</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date17"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>27/02/13 23:11:41</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>27/02/13 23:11:42</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>tutu</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date17"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>27/02/13 23:11:41</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>27/02/13 23:11:42</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Listener refused the connection with the following error:
 ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
 The Connection descriptor used by the client was:
 localhost:1521:localhost
-</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>4s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date17"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>27/02/13 23:11:38</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>27/02/13 23:11:42</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.LogObj"> 
-      <void property="arrayOfLogsDetails"> 
-       <object class="java.util.ArrayList"> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object id="Date18" class="java.util.Date"> 
-            <long>1362436325520</long> 
-           </object> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>04/03/13 23:32:05</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>04/03/13 23:32:08</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>4s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date17"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>27/02/13 23:11:38</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>27/02/13 23:11:42</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date18">
+            <long>1362436325520</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>04/03/13 23:32:05</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>04/03/13 23:32:08</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Communications link failure
 
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>tutu</string> 
-          </void> 
-         </object> 
-        </void> 
-        <void method="add"> 
-         <object class="com.mobissime.andjety.objects.LogObjDetails"> 
-          <void property="logobj_date"> 
-           <object idref="Date18"/> 
-          </void> 
-          <void property="logobj_heuredeb"> 
-           <string>04/03/13 23:32:08</string> 
-          </void> 
-          <void property="logobj_heurefin"> 
-           <string>04/03/13 23:32:09</string> 
-          </void> 
-          <void property="logobj_resultat"> 
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.</string>
+          </void>
+          <void property="logobjd_database">
+           <string>tutu</string>
+          </void>
+         </object>
+        </void>
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object idref="Date18"/>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>04/03/13 23:32:08</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>04/03/13 23:32:09</string>
+          </void>
+          <void property="logobj_resultat">
            <string>Erreur : Listener refused the connection with the following error:
 ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
 The Connection descriptor used by the client was:
 localhost:1521:localhost
-</string> 
-          </void> 
-          <void property="logobjd_database"> 
-           <string>localhost</string> 
-          </void> 
-         </object> 
-        </void> 
-       </object> 
-      </void> 
-      <void property="logObj_dureeDesTraitements"> 
-       <string>4s</string> 
-      </void> 
-      <void property="logobj_dateexec"> 
-       <object idref="Date18"/> 
-      </void> 
-      <void property="logobj_heuredeb"> 
-       <string>04/03/13 23:32:05</string> 
-      </void> 
-      <void property="logobj_heurefin"> 
-       <string>04/03/13 23:32:09</string> 
-      </void> 
-      <void property="logobj_nbServeurs"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_nbServeursErreur"> 
-       <int>2</int> 
-      </void> 
-      <void property="logobj_taskLibelle"> 
-       <string>tache2</string> 
-      </void> 
-     </object> 
-    </void> 
-   </object> 
-  </void> 
- </object> 
-</java> 
+</string>
+          </void>
+          <void property="logobjd_database">
+           <string>localhost</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>4s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date18"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>04/03/13 23:32:05</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>04/03/13 23:32:09</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>2</int>
+      </void>
+      <void property="logobj_nbServeursErreur">
+       <int>2</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>tache2</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date19">
+            <long>1446629703684</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>04/11/15 10:35:03</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>04/11/15 10:35:05</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Ok</string>
+          </void>
+          <void property="logobjd_database">
+           <string>web.mobissime.com</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>1s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date19"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>04/11/15 10:35:03</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>04/11/15 10:35:05</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>1</int>
+      </void>
+      <void property="logobj_nbServeursOk">
+       <int>1</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>Test de requete</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.LogObj">
+      <void property="arrayOfLogsDetails">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <object class="com.mobissime.andjety.objects.LogObjDetails">
+          <void property="logobj_date">
+           <object class="java.util.Date" id="Date20">
+            <long>1446629731541</long>
+           </object>
+          </void>
+          <void property="logobj_heuredeb">
+           <string>04/11/15 10:35:31</string>
+          </void>
+          <void property="logobj_heurefin">
+           <string>04/11/15 10:35:33</string>
+          </void>
+          <void property="logobj_resultat">
+           <string>Ok</string>
+          </void>
+          <void property="logobjd_database">
+           <string>web.mobissime.com</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="logObj_dureeDesTraitements">
+       <string>1s</string>
+      </void>
+      <void property="logobj_dateexec">
+       <object idref="Date20"/>
+      </void>
+      <void property="logobj_heuredeb">
+       <string>04/11/15 10:35:31</string>
+      </void>
+      <void property="logobj_heurefin">
+       <string>04/11/15 10:35:33</string>
+      </void>
+      <void property="logobj_nbServeurs">
+       <int>1</int>
+      </void>
+      <void property="logobj_nbServeursOk">
+       <int>1</int>
+      </void>
+      <void property="logobj_taskLibelle">
+       <string>Test de requete</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
