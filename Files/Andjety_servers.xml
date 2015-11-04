@@ -1,75 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<java version="1.6.0_32" class="java.beans.XMLDecoder"> 
- <object class="com.mobissime.andjety.objects.DatabaseListeObj"> 
-  <void property="dbListe"> 
-   <object class="java.util.ArrayList"> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.DatabaseObj"> 
-      <void property="dblist_instance"> 
-       <string>base_srv</string> 
-      </void> 
-      <void property="dblist_ip"> 
-       <string>localhost</string> 
-      </void> 
-      <void property="dblist_libelle"> 
-       <string>localhost</string> 
-      </void> 
-      <void property="dblist_password"> 
-       <string>password</string> 
-      </void> 
-      <void property="dblist_sgbd"> 
-       <string>MYSQL</string> 
-      </void> 
-      <void property="dblist_user"> 
-       <string>root</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.DatabaseObj"> 
-      <void property="dblist_instance"> 
-       <string>test</string> 
-      </void> 
-      <void property="dblist_ip"> 
-       <string>localhost</string> 
-      </void> 
-      <void property="dblist_libelle"> 
-       <string>tutu</string> 
-      </void> 
-      <void property="dblist_password"> 
-       <string>password</string> 
-      </void> 
-      <void property="dblist_sgbd"> 
-       <string>MYSQL</string> 
-      </void> 
-      <void property="dblist_user"> 
-       <string>root</string> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.mobissime.andjety.objects.DatabaseObj"> 
-      <void property="dblist_instance"> 
-       <string>localhost</string> 
-      </void> 
-      <void property="dblist_ip"> 
-       <string>localhost</string> 
-      </void> 
-      <void property="dblist_libelle"> 
-       <string>localhostlocalhost</string> 
-      </void> 
-      <void property="dblist_password"> 
-       <string>localhost</string> 
-      </void> 
-      <void property="dblist_sgbd"> 
-       <string>ORACLE</string> 
-      </void> 
-      <void property="dblist_user"> 
-       <string>localhost</string> 
-      </void> 
-     </object> 
-    </void> 
-   </object> 
-  </void> 
- </object> 
-</java> 
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_65" class="java.beans.XMLDecoder">
+ <object class="com.mobissime.andjety.objects.DatabaseListeObj">
+  <void property="dbListe">
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.mobissime.andjety.objects.DatabaseObj">
+      <void property="dblist_instance">
+       <string>drupal</string>
+      </void>
+      <void property="dblist_ip">
+       <string>web.mobissime.com</string>
+      </void>
+      <void property="dblist_libelle">
+       <string>web.mobissime.com</string>
+      </void>
+      <void property="dblist_password">
+       <string>Emmeline021287</string>
+      </void>
+      <void property="dblist_sgbd">
+       <string>MYSQL</string>
+      </void>
+      <void property="dblist_user">
+       <string>root</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

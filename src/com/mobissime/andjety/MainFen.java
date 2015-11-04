@@ -97,8 +97,8 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         jButtonHelpButton.setVisible(false);
         jProgressBarUpdateObjet.setVisible(false);
         jProgressBarUpdate.setVisible(false);
-        jButtonGestTachesPlanif
-                .setVisible(false);
+        //jButtonGestTachesPlanif
+        //        .setVisible(false);
         jMenuItem5.setVisible(false);
         jSeparator1.setVisible(false);
         jMenuItemEditeurSQL.setVisible(false);
@@ -1240,11 +1240,13 @@ public class MainFen extends javax.swing.JFrame implements MainFenObservable {
         try {
             // Sérialisation des tables & attributs du projet
             String pathOfProject = System.getProperty("user.dir");
-            if (OSValidator.isUnix()) {
+            /*if (OSValidator.isUnix()) {
                 XMLTools.encodeToFile(dbListObj, "/usr/lib/Andjety/Files/Andjety_servers.xml");
             } else {
                 XMLTools.encodeToFile(dbListObj, pathOfProject + "/Files/Andjety_servers.xml");
-            }
+            }*/
+                            XMLTools.encodeToFile(dbListObj, pathOfProject + "/Files/Andjety_servers.xml");
+
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainFen.class.getName()).log(Level.SEVERE, null, ex);
